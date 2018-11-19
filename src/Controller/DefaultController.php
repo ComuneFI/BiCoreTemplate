@@ -2,35 +2,23 @@
 
 namespace App\Controller;
 
-use Cdf\BiCoreBundle\Controller\FiController;
-use Cdf\BiCoreBundle\Utils\Tabella\ParametriTabella;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Entity\Cliente;
-use App\Form\ClienteType;
-use Cdf\BiCoreBundle\Utils\Tabella\Tabella;
-use Doctrine\Common\Collections\Expr\Comparison;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Cdf\BiCoreBundle\Utils\Tabella\DatetimeTabella;
+use \Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Cliente controller.
+ * Matches / exactly
  *
+ * @Route("/", name="welcome")
  */
-class DefaultController
+class DefaultController extends AbstractController
 {
 
-    public function index(Request $request, \Symfony\Component\Asset\Packages $assetsmanager)
+    public function index(Request $request)
     {
-        return new Response("Benvenuto");
-        /*        return $this->render(
-          $template,
-          array(
-          'parametritabella' => $parametritabella,
-          )
-          );
-
-         */
+        $template = "Default/index.html.twig";
+        return $this->render($template, array());
     }
 
 }

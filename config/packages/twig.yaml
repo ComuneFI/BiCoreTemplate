@@ -5,10 +5,6 @@ twig:
     globals:
         appname: "%env(resolve:bicorebundle_appname)%"
         database_url: "%env(resolve:DATABASE_URL)%"
-        #database_driver: "%env(resolve:database_driver)%"
-        #database_host: "%env(resolve:database_host)%"
-        #database_name: "%env(resolve:database_name)%"
-        #database_user: "%env(resolve:database_user)%"
     form_themes:
         - bootstrap_4_layout.html.twig
 
