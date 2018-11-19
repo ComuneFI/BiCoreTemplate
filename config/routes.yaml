@@ -1,0 +1,25 @@
+# This file is the entry point to configure your own HTTP routes.
+# Files in the routes/ subdirectory configure the routes for your dependencies.
+
+#index:
+#    path: /
+#    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+fi_pannello_amministrazione:
+    resource: "@PannelloAmministrazioneBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fi_core:
+    resource: "@BiCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+#HOMEPAGE ROUTE
+homepage:
+    prefix:   /
+    path:      /
+    defaults: { _controller: 'App\Controller\DefaultController::index' }
+    requirements:
+      methods:  GET
