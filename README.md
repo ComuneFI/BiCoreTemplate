@@ -16,7 +16,6 @@ Installazione:
     bin/console cache:clear
     bin/console bicorebundle:dropdatabase --force
     bin/console bicorebundle:install admin admin admin@admin.it
-    bin/console bicoredemo:loaddefauldata
     
     ##Start server 
     bin/console server:start 2>&1 &
