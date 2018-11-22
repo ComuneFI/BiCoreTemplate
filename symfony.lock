@@ -356,9 +356,6 @@
     "symfony/yaml": {
         "version": "v3.4.18"
     },
-    "tecnickcom/tcpdf": {
-        "version": "6.2.26"
-    },
     "twig/twig": {
         "version": "v2.5.0"
     },
