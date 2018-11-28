@@ -49,6 +49,9 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $client->waitFor(".biconfirmok");
         $this->pressButton('biconfirmok');
 
+        $client->request('GET', $url);
+        $this->visit($url);
+
         $this->executeScript('$("#entityform").val("Prova")');
 
         $this->pressButton('adminpanelgenerateformcrud');
