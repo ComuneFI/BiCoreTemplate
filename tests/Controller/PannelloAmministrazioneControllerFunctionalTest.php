@@ -37,10 +37,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $client->waitFor("#corebundlemodalinfo");
         $this->pressButton('biconfirmok');
 
-        clearcache();
-
         $this->visit($url);
-        $this->login('admin', 'admin');
 
         $this->assertTrue(file_exists($checkentityprova));
 
@@ -66,8 +63,6 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $this->assertTrue(file_exists($checkviewsprova));
         $this->assertTrue(file_exists($checkindexprova));
 
-        clearcache();
-
         try {
             $urlRouting = $this->router->generate('Prova_container');
         } catch (\Exception $exc) {
@@ -78,7 +73,6 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
 
 
         $this->visit($url);
-        $this->login('admin', 'admin');
         $session = $this->getSession();
         $page = $this->getCurrentPage();
 
@@ -163,8 +157,8 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
     {
         parent::tearDown();
         cleanFilesystem();
-        removecache();
-        clearcache();
+        //removecache();
+        //clearcache();
     }
 
 }

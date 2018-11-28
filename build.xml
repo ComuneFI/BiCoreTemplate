@@ -72,7 +72,7 @@
 
     <target name="phpunit-ci" description="Run unit tests with PHPUnit">
         <exec executable="vendor/bin/simple-phpunit" failonerror="true">
-            <env key="PANTHER_NO_HEADLESS" value="1"/>
+            <env key="PANTHER_NO_HEADLESS" value="0"/>
         </exec>
     </target>
 </project>
