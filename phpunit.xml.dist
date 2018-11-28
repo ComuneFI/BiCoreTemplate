@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+    backupGlobals               = "false"
+    backupStaticAttributes      = "false"
+    colors                      = "true"
+    convertErrorsToExceptions   = "true"
+    convertNoticesToExceptions  = "true"
+    convertWarningsToExceptions = "true"
+    processIsolation            = "false"
+    stopOnFailure               = "true"
+    syntaxCheck                 = "true"
+    bootstrap                   = "./tests/bootstrap.php" >
+
+    <testsuites>
+        <testsuite name="App">
+            <directory suffix=".php">./tests/App/Controller</directory>
+            <directory suffix=".php">./tests/App/Functional</directory>
+        </testsuite>
+    </testsuites>
+    
+    <php>
+        <env name="KERNEL_CLASS" value="App\Kernel" />
+        <env name="APP_ENV" value="test" />
+        <env name="APP_DEBUG" value="1" />
+        <env name="APP_SECRET" value="s$cretf0rt3st" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak_vendors" />
+        
+        <server name="PANTHER_WEB_SERVER_PORT" value="9090" />
+        
+    </php>
+    
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>./../../src</directory>
+            <exclude>
+                <directory>./../../tests</directory>
+                <directory>./../../src/*Bundle/Resources</directory>
+                <directory>./../../src/*/*Bundle/Resources</directory>
+                <directory>./../../src/*/Bundle/*Bundle/Resources</directory>
+            </exclude>
+        </whitelist>
+        
+    </filter>
+    
+    <extensions>
+        <extension class="Symfony\Component\Panther\ServerExtension" />
+    </extensions>
+    
+    <listeners>
+        <!--<listener class="Symfony\Component\Panther\ServerListener" />-->
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+        <!--<listener class="Symfony\Bridge\PhpUnit\CoverageListener" />-->
+    </listeners>   
+</phpunit>
