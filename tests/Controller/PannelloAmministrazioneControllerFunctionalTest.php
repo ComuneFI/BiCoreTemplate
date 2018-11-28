@@ -60,6 +60,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $this->pressButton('biconfirmyes');
 
         $client->waitFor(".biconfirmok");
+        echo $this->getCurrentPageContent();
         $this->pressButton('biconfirmok');
 
         $this->assertTrue(file_exists($checktypeprova));
