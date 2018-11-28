@@ -19,8 +19,15 @@ if (!isset($_SERVER['APP_ENV'])) {
     }
     (new Dotenv())->load(__DIR__ . '/../.env');
 }
+
+$classLoader = new \Composer\Autoload\ClassLoader();
+$testbicorefolder = __DIR__ . '/../vendor/comunedifirenze/bicorebundle/tests/Cdf/Tests';
+$classLoader->addPsr4("Cdf\\BiCoreBundle\\Tests\\", $testbicorefolder, true);
+$classLoader->register();
+
 date_default_timezone_set('Europe/Rome');
 cleanFilesystem();
+
 
 //databaseinit();
 function clearcache()
