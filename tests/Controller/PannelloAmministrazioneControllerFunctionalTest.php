@@ -58,7 +58,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
 
         $client->waitFor(".biconfirmyes");
         echo $this->getCurrentPageContent();
-        $this->pressButton('biconfirmyes');
+        $this->executeScript('$(".biconfirmyes").click();');
 
         $client->waitFor(".biconfirmok");
         $this->pressButton('biconfirmok');
