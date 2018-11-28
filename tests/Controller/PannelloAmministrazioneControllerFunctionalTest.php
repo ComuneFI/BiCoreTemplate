@@ -9,7 +9,6 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
     /*
      * @test
      */
-
     public function test20AdminpanelGenerateBundle()
     {
         //url da testare
@@ -57,11 +56,10 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $this->pressButton('adminpanelgenerateformcrud');
 
         $client->waitFor(".biconfirmyes");
-        echo $this->getCurrentPageContent();
         $this->executeScript('$(".biconfirmyes").click();');
 
         $client->waitFor(".biconfirmok");
-        $this->pressButton('biconfirmok');
+        $this->executeScript('$(".biconfirmok").click();');
 
         $this->assertTrue(file_exists($checktypeprova));
         $this->assertTrue(file_exists($checkviewsprova));
@@ -81,11 +79,10 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $page = $this->getCurrentPage();
 
         //echo $page->getHtml();
-        //$this->crudoperation($session, $page);
+        $this->crudoperation($session, $page);
 
         $session->quit();
     }
-
     private function crudoperation($session, $page)
     {
         $client = $this->getClient();
@@ -135,7 +132,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         $this->clickElement('prova_submit');
         $this->ajaxWait(6000);
 
-        
+
         $this->clickElement('.bibottonimodificatabellaProva[data-biid="' . $rowid . '"]');
         $client->waitFor(".btn.btn-sm.h-100.d-flex.align-items-center.it-cancel");
         $this->clickElement('.btn.btn-sm.h-100.d-flex.align-items-center.it-cancel');
@@ -153,7 +150,6 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
 
         $this->assertEquals(count($qb3), 0);
     }
-
     /**
      * {@inheritdoc}
      */
@@ -164,5 +160,4 @@ class PannelloAmministrazioneControllerFunctionalTest extends FifreeTestAuthoriz
         //removecache();
         //clearcache();
     }
-
 }
