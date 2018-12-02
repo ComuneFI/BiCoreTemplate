@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.1.25",
+            "version": "v0.1.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "65d256993aab24633811e2e52085c46bc02c2671"
+                "reference": "f8041899dccd83b311ee5cd5452dd3601b4829e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/65d256993aab24633811e2e52085c46bc02c2671",
-                "reference": "65d256993aab24633811e2e52085c46bc02c2671",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/f8041899dccd83b311ee5cd5452dd3601b4829e8",
+                "reference": "f8041899dccd83b311ee5cd5452dd3601b4829e8",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2018-12-02T00:41:24+00:00"
+            "time": "2018-12-02T15:02:01+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2953,16 +2953,16 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "4a33574d5771f4b04334cd4f7d43de96a92efb62"
+                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/4a33574d5771f4b04334cd4f7d43de96a92efb62",
-                "reference": "4a33574d5771f4b04334cd4f7d43de96a92efb62",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/3edf0ab943d1985a356721952cba36ff31bd6e5f",
+                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f",
                 "shasum": ""
             },
             "require": {
@@ -3017,7 +3017,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2018-10-31T08:00:32+00:00"
+            "time": "2018-11-24T09:35:08+00:00"
         },
         {
             "name": "symfony/debug",
