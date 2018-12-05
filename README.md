@@ -57,20 +57,20 @@ bin/console server:stop
 
 Creare un file modello workbench nella cartella doc (es demo.mwb):
 
-![img](doc/mwb.gif)
+![img](images/mwb.gif)
 
 Visitare: http://127.0.0.1:8000/adminpanel ed effettuare il login (admin/admin):
 
-![img](doc/login.gif)
+![img](images/login.gif)
 
 
 *Creare le entità per il modello workbench e aggiornare il database con le nuove entità:
 
-![img](doc/createentities.gif)
+![img](images/createentities.gif)
 
 *Ricaricare la pagina e creare le forms per il C.R.U.D. :
 
-![img](doc/createforms.gif)
+![img](images/createforms.gif)
 
 * Nel file Entity/Persona.php generato dal pannello di amministrazione creare la funzione:
 ```
@@ -80,10 +80,10 @@ Visitare: http://127.0.0.1:8000/adminpanel ed effettuare il login (admin/admin):
     }
 
 ```
-![img](doc/createtostring.gif)
+![img](images/createtostring.gif)
 
 *Visitare: http://127.0.0.1:8000/Nazione per aggiungere le nazioni:
-![img](doc/createnazioni.gif)
+![img](images/createnazioni.gif)
 
 *Visitare: http://127.0.0.1:8000/Persona per aggiungere le persone:
 
