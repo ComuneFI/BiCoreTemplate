@@ -85,7 +85,7 @@ bin/console server:stop
 * Visitare: http://127.0.0.1:8000/Nazione per aggiungere le nazioni:
 ![img](images/createnazioni.gif)
 
-* Modificare la form di Persona per migliorarla in src/Form/Persona.php con nell'esempio:
+* Modificare la form di Persona per migliorarla in src/Form/Persona.php come nell'esempio:
 ```
 <?php
 
