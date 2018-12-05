@@ -59,7 +59,33 @@ Creare un file modello workbench nella cartella doc (es demo.mwb):
 
 ![img](doc/mwb.gif)
 
-Visitare: http://127.0.0.1:8000/adminpanel ed effettuare il login (admin/admin).
+Visitare: http://127.0.0.1:8000/adminpanel ed effettuare il login (admin/admin):
 
 ![img](doc/login.gif)
+
+
+*Creare le entità per il modello workbench e aggiornare il database con le nuove entità:
+
+![img](doc/createentities.gif)
+
+*Ricaricare la pagina e creare le forms per il C.R.U.D. :
+
+![img](doc/createforms.gif)
+
+* Nel file Entity/Persona.php generato dal pannello di amministrazione creare la funzione:
+```
+    public function __toString()
+    {
+        return $this->getDescrizione();
+    }
+
+```
+![img](doc/createtostring.gif)
+
+*Visitare: http://127.0.0.1:8000/Nazione per aggiungere le nazioni:
+![img](doc/createnazioni.gif)
+
+*Visitare: http://127.0.0.1:8000/Persona per aggiungere le persone:
+
+
 
