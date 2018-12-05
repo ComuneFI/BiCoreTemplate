@@ -46,9 +46,20 @@ bin/console server:start 0.0.0.0:8000
 ```
 se è installato in un container/docker e si desidera accedervi dall'host.
 
-Visitare: http://127.0.0.1:8000/ ed effettuare il login (adnin/admin).
+Visitare: http://127.0.0.1:8000/ ed effettuare il login (admin/admin).
 
 Il server rimane attivo in background. Per arrestarlo:
 ```
 bin/console server:stop
 ```
+
+### Demo
+
+Creare un file modello workbench nella cartella doc (es demo.mwb):
+
+![img](doc/mwb.gif)
+
+Visitare: http://127.0.0.1:8000/adminpanel ed effettuare il login (admin/admin).
+
+![img](doc/login.gif)
+
