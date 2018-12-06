@@ -2,8 +2,9 @@
 
 # BiCoreTemplate
 
-## Intro
 > ⚠️ **WORK IN PROGRESS** ⚠️
+
+## Intro
 
 BiCoreTemplate è un template pronto all'uso che si poggia sul <a href="https://github.com/ComuneFI/BiCoreBundle" target="_blank">bundle</a> BiCoreBundle 
 
