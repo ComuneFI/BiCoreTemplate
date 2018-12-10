@@ -17,4 +17,5 @@ return [
     Cdf\BiCoreBundle\BiCoreBundle::class => ['all' => true],
     Cdf\PannelloAmministrazioneBundle\PannelloAmministrazioneBundle::class => ['all' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true, 'test' => true],
+    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
 ];
