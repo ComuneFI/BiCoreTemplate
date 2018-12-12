@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "01b583c33789e2bae3f75b6ecd2ec8f5",
@@ -1402,16 +1402,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.26.2",
+            "version": "v0.27.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "1c76addd933239837596277b269169e38dd833aa"
+                "reference": "5b27d2dcea3aa0a0b513184e8f8bb818f559c3e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/1c76addd933239837596277b269169e38dd833aa",
-                "reference": "1c76addd933239837596277b269169e38dd833aa",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/5b27d2dcea3aa0a0b513184e8f8bb818f559c3e3",
+                "reference": "5b27d2dcea3aa0a0b513184e8f8bb818f559c3e3",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2018-12-11T22:38:52+00:00"
+            "time": "2018-12-12T19:47:49+00:00"
         },
         {
             "name": "fi/osbundle",
