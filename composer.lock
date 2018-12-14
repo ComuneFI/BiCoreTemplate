@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.1.35",
+            "version": "v0.1.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "de67a01821f379e075dc2eda485d2299c29ced17"
+                "reference": "baaba30ebe440400e465a4a93b30fcbf9c44adf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/de67a01821f379e075dc2eda485d2299c29ced17",
-                "reference": "de67a01821f379e075dc2eda485d2299c29ced17",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/baaba30ebe440400e465a4a93b30fcbf9c44adf4",
+                "reference": "baaba30ebe440400e465a4a93b30fcbf9c44adf4",
                 "shasum": ""
             },
             "require": {
@@ -86,21 +86,21 @@
                 "php": ">=7.2",
                 "phpoffice/phpspreadsheet": "^1.4",
                 "sensio/distribution-bundle": "^5.0",
-                "symfony/asset": "3.4.*",
-                "symfony/console": "3.4.*",
-                "symfony/dotenv": "3.4.*",
+                "symfony/asset": "^3.4",
+                "symfony/console": "^3.4",
+                "symfony/dotenv": "^3.4",
                 "symfony/flex": "^1.0",
-                "symfony/form": "3.4.*",
-                "symfony/lock": "3.4.*",
+                "symfony/form": "^3.4",
+                "symfony/lock": "^3.4",
                 "symfony/maker-bundle": "^1.7",
                 "symfony/monolog-bundle": "^3.2",
                 "symfony/orm-pack": "^1.0",
-                "symfony/security-bundle": "3.4.*",
+                "symfony/security-bundle": "^3.4",
                 "symfony/swiftmailer-bundle": "^3.2",
-                "symfony/translation": "3.4.*",
-                "symfony/twig-bundle": "3.4.*",
-                "symfony/validator": "3.4.*",
-                "symfony/yaml": "3.4.*"
+                "symfony/translation": "^3.4",
+                "symfony/twig-bundle": "^3.4",
+                "symfony/validator": "^3.4",
+                "symfony/yaml": "^3.4"
             },
             "conflict": {
                 "symfony/symfony": "*"
@@ -113,8 +113,8 @@
                 "squizlabs/php_codesniffer": "^3.3",
                 "symfony/profiler-pack": "^1.0",
                 "symfony/test-pack": "^1.0",
-                "symfony/var-dumper": "3.4.*",
-                "symfony/web-server-bundle": "3.4.*"
+                "symfony/var-dumper": "^3.4",
+                "symfony/web-server-bundle": "^3.4"
             },
             "suggest": {
                 "ext-apcu": "The extension required to use cache"
@@ -169,7 +169,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2018-12-12T14:31:34+00:00"
+            "time": "2018-12-14T14:05:44+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -464,16 +464,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.9.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "21fdabe2fc01e004e1966f200d900554876bc63c"
+                "reference": "ec74d6e300d78fbc896669c3ca57ef9719adc9c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/21fdabe2fc01e004e1966f200d900554876bc63c",
-                "reference": "21fdabe2fc01e004e1966f200d900554876bc63c",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/ec74d6e300d78fbc896669c3ca57ef9719adc9c6",
+                "reference": "ec74d6e300d78fbc896669c3ca57ef9719adc9c6",
                 "shasum": ""
             },
             "require": {
@@ -542,7 +542,7 @@
                 "php",
                 "queryobject"
             ],
-            "time": "2018-12-04T04:39:48+00:00"
+            "time": "2018-12-14T04:51:13+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1402,16 +1402,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.26.2",
+            "version": "v0.27.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "1c76addd933239837596277b269169e38dd833aa"
+                "reference": "0d318918cf5c3d0e7e784aa15cb349e718ca1713"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/1c76addd933239837596277b269169e38dd833aa",
-                "reference": "1c76addd933239837596277b269169e38dd833aa",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/0d318918cf5c3d0e7e784aa15cb349e718ca1713",
+                "reference": "0d318918cf5c3d0e7e784aa15cb349e718ca1713",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2018-12-11T22:38:52+00:00"
+            "time": "2018-12-14T13:28:50+00:00"
         },
         {
             "name": "fi/osbundle",
@@ -4061,16 +4061,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "e873047b6022a0343c9354f65d5d47b9e351dd53"
+                "reference": "aa37ea1323ac888913bdd3e5f83d846798729449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/e873047b6022a0343c9354f65d5d47b9e351dd53",
-                "reference": "e873047b6022a0343c9354f65d5d47b9e351dd53",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/aa37ea1323ac888913bdd3e5f83d846798729449",
+                "reference": "aa37ea1323ac888913bdd3e5f83d846798729449",
                 "shasum": ""
             },
             "require": {
@@ -4123,7 +4123,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2018-11-03T18:25:11+00:00"
+            "time": "2018-12-13T18:54:47+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
