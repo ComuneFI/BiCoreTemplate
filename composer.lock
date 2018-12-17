@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.1.48",
+            "version": "v0.1.49",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "80923f3d8dba8ce9b3574480f5df86b87f154c32"
+                "reference": "9fa0e95ad761f81dd78a475fa97185718d11fea1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/80923f3d8dba8ce9b3574480f5df86b87f154c32",
-                "reference": "80923f3d8dba8ce9b3574480f5df86b87f154c32",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/9fa0e95ad761f81dd78a475fa97185718d11fea1",
+                "reference": "9fa0e95ad761f81dd78a475fa97185718d11fea1",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2018-12-17T13:10:44+00:00"
+            "time": "2018-12-17T19:38:20+00:00"
         },
         {
             "name": "doctrine/annotations",
