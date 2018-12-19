@@ -1402,16 +1402,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.27.4",
+            "version": "v0.27.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "0552e7122a9482ea3cba5f22207ffbe4291194d3"
+                "reference": "5c6823048441b2b33d639248da0542192043e86e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/0552e7122a9482ea3cba5f22207ffbe4291194d3",
-                "reference": "0552e7122a9482ea3cba5f22207ffbe4291194d3",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/5c6823048441b2b33d639248da0542192043e86e",
+                "reference": "5c6823048441b2b33d639248da0542192043e86e",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2018-12-17T21:49:58+00:00"
+            "time": "2018-12-19T15:41:31+00:00"
         },
         {
             "name": "fi/osbundle",
