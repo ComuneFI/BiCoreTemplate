@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.1.50",
+            "version": "v0.1.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "00086e5ef17b1e7f57116a1254af9c2315c9efbb"
+                "reference": "95122bd0915b8d3ee5caf424a08cf205549a5d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/00086e5ef17b1e7f57116a1254af9c2315c9efbb",
-                "reference": "00086e5ef17b1e7f57116a1254af9c2315c9efbb",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/95122bd0915b8d3ee5caf424a08cf205549a5d7e",
+                "reference": "95122bd0915b8d3ee5caf424a08cf205549a5d7e",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2018-12-17T21:21:26+00:00"
+            "time": "2018-12-19T09:18:26+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1402,16 +1402,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.27.3",
+            "version": "v0.27.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "c2d32e13a442131658803caca4589a45c8537433"
+                "reference": "0552e7122a9482ea3cba5f22207ffbe4291194d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/c2d32e13a442131658803caca4589a45c8537433",
-                "reference": "c2d32e13a442131658803caca4589a45c8537433",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/0552e7122a9482ea3cba5f22207ffbe4291194d3",
+                "reference": "0552e7122a9482ea3cba5f22207ffbe4291194d3",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2018-12-17T12:46:46+00:00"
+            "time": "2018-12-17T21:49:58+00:00"
         },
         {
             "name": "fi/osbundle",
