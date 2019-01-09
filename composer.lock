@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "01b583c33789e2bae3f75b6ecd2ec8f5",
@@ -546,16 +546,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "82d2c63cd09acbde2332f55d9aa7b28aefe4983d"
+                "reference": "98551d71f515692c2278073e0d483763ac70b341"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/82d2c63cd09acbde2332f55d9aa7b28aefe4983d",
-                "reference": "82d2c63cd09acbde2332f55d9aa7b28aefe4983d",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/98551d71f515692c2278073e0d483763ac70b341",
+                "reference": "98551d71f515692c2278073e0d483763ac70b341",
                 "shasum": ""
             },
             "require": {
@@ -627,7 +627,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2018-11-30T13:53:17+00:00"
+            "time": "2019-01-07T15:31:08+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -1402,16 +1402,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.29.0",
+            "version": "v0.29.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "343fd0816e6f6f936e8d677c3acbc65104184c26"
+                "reference": "f2e382fbf79f24409dbd242af054461323a32547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/343fd0816e6f6f936e8d677c3acbc65104184c26",
-                "reference": "343fd0816e6f6f936e8d677c3acbc65104184c26",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/f2e382fbf79f24409dbd242af054461323a32547",
+                "reference": "f2e382fbf79f24409dbd242af054461323a32547",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2019-01-07T15:59:51+00:00"
+            "time": "2019-01-09T19:15:08+00:00"
         },
         {
             "name": "fi/osbundle",
