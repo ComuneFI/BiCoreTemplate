@@ -1414,16 +1414,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.29.3",
+            "version": "v0.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "1abb3b9e6691c87f8ac95f809bb6a927dbbde999"
+                "reference": "baa4c2ae075086c86986d7365080ad62f47188b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/1abb3b9e6691c87f8ac95f809bb6a927dbbde999",
-                "reference": "1abb3b9e6691c87f8ac95f809bb6a927dbbde999",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/baa4c2ae075086c86986d7365080ad62f47188b4",
+                "reference": "baa4c2ae075086c86986d7365080ad62f47188b4",
                 "shasum": ""
             },
             "require": {
@@ -1454,7 +1454,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2019-01-16T10:51:38+00:00"
+            "time": "2019-01-18T13:59:16+00:00"
         },
         {
             "name": "fi/osbundle",
@@ -4146,16 +4146,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.11.2",
+            "version": "v1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "24b19cccad0c658eca516b35b08668d123fabf92"
+                "reference": "08fabae78050d2fe71341d0edc3872bddf03482f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/24b19cccad0c658eca516b35b08668d123fabf92",
-                "reference": "24b19cccad0c658eca516b35b08668d123fabf92",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/08fabae78050d2fe71341d0edc3872bddf03482f",
+                "reference": "08fabae78050d2fe71341d0edc3872bddf03482f",
                 "shasum": ""
             },
             "require": {
@@ -4208,7 +4208,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2019-01-05T04:30:01+00:00"
+            "time": "2019-01-17T02:02:27+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
