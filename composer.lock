@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "01b583c33789e2bae3f75b6ecd2ec8f5",
@@ -64,20 +64,20 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.1.54",
+            "version": "v0.1.55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "1dc5b384f58f68154b0fbc44ec7b3904b4615b46"
+                "reference": "48f148485abcda4830c9f512e07516fcaef9a0e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/1dc5b384f58f68154b0fbc44ec7b3904b4615b46",
-                "reference": "1dc5b384f58f68154b0fbc44ec7b3904b4615b46",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/48f148485abcda4830c9f512e07516fcaef9a0e1",
+                "reference": "48f148485abcda4830c9f512e07516fcaef9a0e1",
                 "shasum": ""
             },
             "require": {
-                "fi/bootstrapitaliabundle": "~0.1",
+                "fi/bootstrapitaliabundle": "^1.0",
                 "fi/osbundle": "~2.0",
                 "friendsofsymfony/jsrouting-bundle": "^2.2",
                 "friendsofsymfony/user-bundle": "^2.1",
@@ -169,7 +169,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-01-30T13:41:46+00:00"
+            "time": "2019-02-01T17:58:19+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1414,16 +1414,16 @@
         },
         {
             "name": "fi/bootstrapitaliabundle",
-            "version": "v0.31.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BootstrapitaliaBundle.git",
-                "reference": "736b0b5a0bc9827daca39b88bc2b2cf11455581d"
+                "reference": "f890b6f46ee8c16fb2cbc2a064bf7d31d3c3d951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/736b0b5a0bc9827daca39b88bc2b2cf11455581d",
-                "reference": "736b0b5a0bc9827daca39b88bc2b2cf11455581d",
+                "url": "https://api.github.com/repos/ComuneFI/BootstrapitaliaBundle/zipball/f890b6f46ee8c16fb2cbc2a064bf7d31d3c3d951",
+                "reference": "f890b6f46ee8c16fb2cbc2a064bf7d31d3c3d951",
                 "shasum": ""
             },
             "require": {
@@ -1454,7 +1454,7 @@
             "keywords": [
                 "Bootstrapitalia bundle"
             ],
-            "time": "2019-01-31T10:47:58+00:00"
+            "time": "2019-02-01T17:02:35+00:00"
         },
         {
             "name": "fi/osbundle",
