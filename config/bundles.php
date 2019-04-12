@@ -13,7 +13,6 @@ return [
     Sensio\Bundle\DistributionBundle\SensioDistributionBundle::class => ['all' => true],
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     FOS\JsRoutingBundle\FOSJsRoutingBundle::class => ['all' => true],
-    Fi\BootstrapitaliaBundle\BootstrapitaliaBundle::class => ['all' => true],
     Cdf\BiCoreBundle\BiCoreBundle::class => ['all' => true],
     Cdf\PannelloAmministrazioneBundle\PannelloAmministrazioneBundle::class => ['all' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true, 'test' => true],
