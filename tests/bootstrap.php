@@ -7,7 +7,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 set_time_limit(0);
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 if (!class_exists(Application::class)) {
     throw new \RuntimeException('You need to add "symfony/framework-bundle" as a Composer dependency.');
@@ -28,38 +28,37 @@ $classLoader->register();
 date_default_timezone_set('Europe/Rome');
 cleanFilesystem();
 
-
 //databaseinit();
 function clearcache()
 {
     passthru(sprintf(
-                    '"%s/console" cache:clear', __DIR__ . '/../bin'
+                    '"%s/console" cache:clear --env=test', __DIR__.'/../bin'
     ));
 }
 
 function databaseinit()
 {
     passthru(sprintf(
-                    '"%s/console" bicorebundle:dropdatabase --force', __DIR__ . '/../bin'
+                    '"%s/console" bicorebundle:dropdatabase --force', __DIR__.'/../bin'
     ));
     passthru(sprintf(
-                    '"%s/console" bicorebundle:install admin admin admin@admin.it', __DIR__ . '/../bin'
+                    '"%s/console" bicorebundle:install admin admin admin@admin.it', __DIR__.'/../bin'
     ));
     passthru(sprintf(
-                    '"%s/console" bicoredemo:loaddefauldata', __DIR__ . '/../bin'
+                    '"%s/console" bicoredemo:loaddefauldata', __DIR__.'/../bin'
     ));
 
-    #sleep(1);
+    //sleep(1);
 }
 
 function removecache()
 {
     $vendorDir = dirname(dirname(__FILE__));
-    $envs = ["test", "dev", "prod"];
+    $envs = ['test', 'dev', 'prod'];
     foreach ($envs as $env) {
-        $cachedir = $vendorDir . '/var/cache/' . $env;
+        $cachedir = $vendorDir.'/tests/var/cache/'.$env;
         if (file_exists($cachedir)) {
-            $command = 'rm -rf ' . $cachedir;
+            $command = 'rm -rf '.$cachedir;
             $process = new Process($command);
             $process->setTimeout(60 * 100);
             $process->run();
@@ -78,91 +77,116 @@ function getErrorText($process, $command)
 {
     $error = ($process->getErrorOutput() ? $process->getErrorOutput() : $process->getOutput());
 
-    return 'Errore nel comando ' . $command . ' ' . $error . ' ';
+    return 'Errore nel comando '.$command.' '.$error.' ';
 }
 
 function cleanFilesystem()
 {
     $vendorDir = dirname(dirname(__FILE__));
-    $publicDir = realpath(dirname(dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR)). DIRECTORY_SEPARATOR ."public";
+    $publicDir = realpath(dirname(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR)).DIRECTORY_SEPARATOR.'public';
     //deleteLineFromFile($kernelfile, $DELETE);
-    $routingfile = $vendorDir . '/config/routes.yaml';
+    $routingfile = $vendorDir.'/config/routes.yaml';
 
     $line = fgets(fopen($routingfile, 'r'));
-    if (substr($line, 0, -1) == 'App_Prova:') {
+    if ('App_Prova:' == substr($line, 0, -1)) {
         for ($index = 0; $index < 4; ++$index) {
             deleteFirstLineFile($routingfile);
         }
     }
 
     $line = fgets(fopen($routingfile, 'r'));
-    if (substr($line, 0, -1) == 'App_Tabellacollegata:') {
+    if ('App_Tabellacollegata:' == substr($line, 0, -1)) {
         for ($index = 0; $index < 4; ++$index) {
             deleteFirstLineFile($routingfile);
         }
     }
+
+    //$configfile = $vendorDir . '/app/config/config.yml';
+    //$remove = '- { resource: "@FiProvaBundle/Resources/config/services.yml" }';
+    //deleteLineFromFile($configfile, $remove);
 
     $fs = new Filesystem();
 
-    $entityfile = $vendorDir . "/src/Entity/Prova.php";
+    $entityfile = $vendorDir.'/src/Entity/Prova.php';
 
     if ($fs->exists($entityfile)) {
         $fs->remove($entityfile);
     }
-    $entityfile2 = $vendorDir . "/src/Entity/BaseProva.php";
+    $entityfile2 = $vendorDir.'/src/Entity/BaseProva.php';
 
     if ($fs->exists($entityfile2)) {
         $fs->remove($entityfile2);
     }
-    $entityfile3 = $vendorDir . "/src/Entity/BaseTabellacollegata.php";
+    $entityfile3 = $vendorDir.'/src/Entity/BaseTabellacollegata.php';
 
     if ($fs->exists($entityfile3)) {
         $fs->remove($entityfile3);
     }
-    $entityfile4 = $vendorDir . "/src/Entity/Tabellacollegata.php";
+    $entityfile4 = $vendorDir.'/src/Entity/Tabellacollegata.php';
 
     if ($fs->exists($entityfile4)) {
         $fs->remove($entityfile4);
     }
-    $routingfile = $vendorDir . "/config/routes/prova.yml";
+    $routingfile = $vendorDir.'/config/routes/prova.yml';
 
     if ($fs->exists($routingfile)) {
         $fs->remove($routingfile);
     }
-    $routingfile = $vendorDir . "/config/routes/tabellacollegata.yml";
+    $routingfile = $vendorDir.'/config/routes/tabellacollegata.yml';
 
     if ($fs->exists($routingfile)) {
         $fs->remove($routingfile);
     }
-    $resources = $vendorDir . "/templates/Prova";
+    $resources = $vendorDir.'/templates/Prova';
     if ($fs->exists($resources)) {
         $fs->remove($resources, true);
     }
 
-    $resources = $vendorDir . "/templates/Tabellacollegata";
+    $resources = $vendorDir.'/templates/Tabellacollegata';
     if ($fs->exists($resources)) {
         $fs->remove($resources, true);
     }
 
-    $form = $vendorDir . "/src/Form/ProvaType.php";
+    $form = $vendorDir.'/src/Form/ProvaType.php';
     if ($fs->exists($form)) {
         $fs->remove($form, true);
     }
 
-    $form = $vendorDir . "/src/Form/TabellacollegataType.php";
+    $form = $vendorDir.'/src/Form/TabellacollegataType.php';
     if ($fs->exists($form)) {
         $fs->remove($form, true);
     }
 
-    $controller = $vendorDir . "/src/Controller/ProvaController.php";
+    $controller = $vendorDir.'/src/Controller/ProvaController.php';
     if ($fs->exists($controller)) {
         $fs->remove($controller, true);
     }
-    $controller = $vendorDir . "/src/Controller/TabellacollegataController.php";
+    $controller = $vendorDir.'/src/Controller/TabellacollegataController.php';
     if ($fs->exists($controller)) {
         $fs->remove($controller, true);
     }
 
+    if ($fs->exists($publicDir.'/js/Prova.js')) {
+        $fs->remove($publicDir.'/js/Prova.js');
+    }
+    if ($fs->exists($publicDir.'/js/Tabellacollegata.js')) {
+        $fs->remove($publicDir.'/js/Tabellacollegata.js');
+    }
+    if ($fs->exists($publicDir.'/css/Prova.css')) {
+        $fs->remove($publicDir.'/css/Prova.css');
+    }
+    if ($fs->exists($publicDir.'/css/Tabellacollegata.css')) {
+        $fs->remove($publicDir.'/css/Tabellacollegata.css');
+    }
+    //Questo mi tocca tenerlo perchè fallisce il routing fos js se trova già una cartella js
+    if ($fs->exists($publicDir.'/js')) {
+        $fs->remove($publicDir.'/js', true);
+    }
+    /* $bundlesrcdir = $vendorDir . '/src';
+
+      if ($fs->exists($bundlesrcdir)) {
+      $fs->remove($bundlesrcdir, true);
+      } */
 }
 
 function deleteFirstLineFile($file)
@@ -203,5 +227,5 @@ function deleteLineFromFile($file, $DELETE)
 
 function writestdout($buffer)
 {
-    fwrite(STDOUT, print_r($buffer . "\n", true));
+    fwrite(STDOUT, print_r($buffer."\n", true));
 }
