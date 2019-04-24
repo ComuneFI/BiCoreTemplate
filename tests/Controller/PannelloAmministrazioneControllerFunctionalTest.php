@@ -27,7 +27,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
 
         $client->request('GET', $url);
         $client->waitFor("#adminpanelgenerateentity");
-        $this->executeScript('$("#entityfile").val("wbadmintest.mwb")');
+        $this->executeScript('document.getElementById("entityfile").value = "wbadmintest.mwb"');
         $this->pressButton('adminpanelgenerateentity');
 
         $client->waitFor(".biconfirmyes");
@@ -51,7 +51,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
         $client->request('GET', $url);
         $this->visit($url);
 
-        $this->executeScript('$("#entityform").val("Prova")');
+        $this->executeScript('document.getElementById("entityform").value = "Prova"');
 
         $this->pressButton('adminpanelgenerateformcrud');
 
