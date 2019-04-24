@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="App">
-            <directory suffix=".php">./tests/Controller</directory>
+            <directory suffix=".php">./vendor/comunedifirenze/bicorebundle/tests/Cdf/PannelloAmministrazioneBundle/Functional</directory>
         </testsuite>
     </testsuites>
     
