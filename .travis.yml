@@ -26,7 +26,7 @@ script:
   - ant
 
 after_success:
-  - rm tests/var/cache/dbtest.sqlite
+  - rm var/cache/dbtest.sqlite
 
 after_failure:
 
