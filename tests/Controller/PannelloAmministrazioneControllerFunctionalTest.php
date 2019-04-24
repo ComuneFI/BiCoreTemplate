@@ -33,7 +33,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
         $client->waitFor(".biconfirmyes");
         $this->pressButton('biconfirmyes');
 
-        echo  $this->getCurrentPageContent();
+        //echo  $this->getCurrentPageContent();
         
         $client->waitFor("#corebundlemodalinfo");
         $this->pressButton('biconfirmok');
