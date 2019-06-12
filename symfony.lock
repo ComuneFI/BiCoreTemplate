@@ -257,6 +257,9 @@
             "ref": "9ec493d6f3575c54671493d635fa4b68658022ab"
         }
     },
+    "symfony/http-client": {
+        "version": "v4.3.1"
+    },
     "symfony/http-foundation": {
         "version": "v3.4.18"
     },
@@ -334,6 +337,9 @@
     },
     "symfony/polyfill-php72": {
         "version": "v1.10.0"
+    },
+    "symfony/polyfill-php73": {
+        "version": "v1.11.0"
     },
     "symfony/process": {
         "version": "v3.4.18"
