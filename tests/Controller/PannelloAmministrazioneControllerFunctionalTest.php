@@ -12,94 +12,97 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
     public function test20AdminpanelGenerateBundle()
     {
         //url da testare
-        $apppath = $this->getContainer()->get("pannelloamministrazione.projectpath");
+        $container = static::createClient()->getContainer();
+        $apppath = $container->get('pannelloamministrazione.projectpath');
         $checkentityprova = $apppath->getSrcPath() .
-                DIRECTORY_SEPARATOR . "Entity" . DIRECTORY_SEPARATOR . "Prova.php";
+                DIRECTORY_SEPARATOR . 'Entity' . DIRECTORY_SEPARATOR . 'Prova.php';
         $checktypeprova = $apppath->getSrcPath() .
-                DIRECTORY_SEPARATOR . "Form" . DIRECTORY_SEPARATOR . "ProvaType.php";
-        $checkviewsprova = $apppath->getSrcPath() . DIRECTORY_SEPARATOR . ".." .
-                DIRECTORY_SEPARATOR . "templates" . DIRECTORY_SEPARATOR . "Prova";
+                DIRECTORY_SEPARATOR . 'Form' . DIRECTORY_SEPARATOR . 'ProvaType.php';
+        $checkviewsprova = $apppath->getSrcPath() . DIRECTORY_SEPARATOR . '..' .
+                DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'Prova';
         $checkindexprova = $checkviewsprova .
-                DIRECTORY_SEPARATOR . "Crud" . DIRECTORY_SEPARATOR . "index.html.twig";
+                DIRECTORY_SEPARATOR . 'Crud' . DIRECTORY_SEPARATOR . 'index.html.twig';
 
         $url = $this->getRoute('fi_pannello_amministrazione_homepage');
-        $client = $this->getClient();
+
+        $client = static::createPantherClient();
 
         $client->request('GET', $url);
-        $client->waitFor("#adminpanelgenerateentity");
+        $client->waitFor('#adminpanelgenerateentity');
         $this->executeScript('document.getElementById("entityfile").value = "wbadmintest.mwb"');
         $this->pressButton('adminpanelgenerateentity');
 
-        $client->waitFor(".biconfirmyes");
+        $client->waitFor('.biconfirmyes');
         $this->pressButton('biconfirmyes');
 
-        //echo  $this->getCurrentPageContent();
-        
-        $client->waitFor("#corebundlemodalinfo");
+        $client->waitFor('#corebundlemodalinfo');
         $this->pressButton('biconfirmok');
 
+        $this->logout();
+        clearcache();
+
         $this->visit($url);
+        $this->login('admin', 'admin');
 
         $this->assertTrue(file_exists($checkentityprova));
 
         $this->pressButton('adminpanelaggiornadatabase');
-        $client->waitFor(".biconfirmyes");
+        $client->waitFor('.biconfirmyes');
 
         $this->pressButton('biconfirmyes');
 
-        $client->waitFor(".biconfirmok");
+        $client->waitFor('.biconfirmok');
         $this->pressButton('biconfirmok');
 
-        $client->request('GET', $url);
-        $this->visit($url);
+        $this->logout();
+        clearcache();
 
+        $this->visit($url);
+        $this->login('admin', 'admin');
         $this->executeScript('document.getElementById("entityform").value = "Prova"');
 
         $this->pressButton('adminpanelgenerateformcrud');
-
-        $client->waitFor(".biconfirmyes");
+        sleep(1);
+        $client->waitFor('.biconfirmyes');
         $this->pressButton('biconfirmyes');
+        sleep(1);
 
-        $client->waitFor(".biconfirmok");
+        $client->waitFor('.biconfirmok');
         $this->pressButton('biconfirmok');
 
         $this->assertTrue(file_exists($checktypeprova));
         $this->assertTrue(file_exists($checkviewsprova));
         $this->assertTrue(file_exists($checkindexprova));
 
+        $this->logout();
+        //clearcache();
+        removecache();
+        
+        $client->reload();
+
         try {
             $urlRouting = $this->router->generate('Prova_container');
         } catch (\Exception $exc) {
-            $urlRouting = "/Prova";
+            $urlRouting = '/Prova';
         }
 
         $url = $urlRouting;
 
-
         $this->visit($url);
-        $session = $this->getSession();
-        $page = $this->getCurrentPage();
+        $this->login('admin', 'admin');
 
-        //echo $page->getHtml();
-        $this->crudoperation($session, $page);
-
-        $session->quit();
+        $this->crudoperation();
     }
-    private function crudoperation($session, $page)
+
+    private function crudoperation()
     {
-        $client = $this->getClient();
+        $client = static::createPantherClient();
 
         $this->clickElement('tabellaadd');
 
-        //$this->pressButton('biconfirmyes');
-
         /* Inserimento */
         $descrizionetest1 = 'Test inserimento descrizione automatico';
-//        if (version_compare(\Symfony\Component\HttpKernel\Kernel::VERSION, '3.0') >= 0) {
-//            $fieldhtml = 'prova_descrizione';
-//        } else {
         $fieldhtml = 'prova_descrizione';
-//        }
 
         $client->waitFor('#' . $fieldhtml);
 
@@ -108,13 +111,14 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
         $client->waitFor('#prova_submit');
         $this->clickElement('prova_submit');
         sleep(2);
+        $em = static::createClient()->getContainer()->get('doctrine')->getManager();
 
-        $qb1 = $this->em->createQueryBuilder()
-                ->select(array('Prova'))
-                ->from('App:Prova', 'Prova')
-                ->where('Prova.descrizione = :descrizione')
-                ->setParameter('descrizione', $descrizionetest1)
-                ->getQuery()->getResult();
+        $qb1 = $em->createQueryBuilder()
+                        ->select(array('Prova'))
+                        ->from('App:Prova', 'Prova')
+                        ->where('Prova.descrizione = :descrizione')
+                        ->setParameter('descrizione', $descrizionetest1)
+                        ->getQuery()->getResult();
 
         $provaobj1 = $qb1[0];
         $rowid = $provaobj1->getId();
@@ -133,37 +137,46 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
         $this->fillField($fieldhtml, $descrizionetest2);
 
         $this->clickElement('prova_submit');
-//        $this->ajaxWait(6000);
-        //Non ho idea del perchè non funzioni anche perchè il record è stato davvero modificato
-        /* $qb2 = $this->em->createQueryBuilder()
-          ->select(array("Prova"))
-          ->from("App:Prova", "Prova")
-          ->where("Prova.id = :id")
-          ->setParameter("id", $rowid)
-          ->getQuery()->getResult();
+        sleep(2);
+        $em->clear();
 
-          $provaobj2 = $qb2[0];
+        $em = static::createClient()->getContainer()->get('doctrine')->getManager();
+        $qb2 = $em->createQueryBuilder()
+                        ->select(array("Prova"))
+                        ->from("App:Prova", "Prova")
+                        ->where("Prova.id = :id")
+                        ->setParameter("id", $rowid)
+                        ->getQuery()->getResult();
 
-          $this->assertEquals($provaobj2->getDescrizione(), $descrizionetest2); */
+        $this->assertEquals($qb2[0]->getDescrizione(), $descrizionetest2);
 
         $this->clickElement('.bibottonimodificatabellaProva[data-biid="' . $rowid . '"]');
-        $contextmenudelete = 'a.h-100.d-flex.align-items-center.btn.btn-xs.btn-danger';
-        $client->waitFor($contextmenudelete );
-        $this->clickElement($contextmenudelete );
+
+        $this->rightClickElement('.context-menu-crud[data-bitableid="' . $rowid . '"]');
+        $client->waitFor('.context-menu-item.context-menu-icon.context-menu-icon-delete');
+        sleep(2);
+        $this->clickElement('.context-menu-item.context-menu-icon.context-menu-icon-delete');
 
         $client->waitFor('.biconfirmyes');
         $this->pressButton('biconfirmyes');
-        sleep(1);
-//        $this->ajaxWait(6000);
+        sleep(2);
 
-        $qb3 = $this->em->createQueryBuilder()
-                ->select(array('Prova'))
-                ->from('App:Prova', 'Prova')
-                ->where('Prova.descrizione = :descrizione')
-                ->setParameter('descrizione', $descrizionetest2)
-                ->getQuery()->getResult();
+        $qb3 = $em->createQueryBuilder()
+                        ->select(array('Prova'))
+                        ->from('App:Prova', 'Prova')
+                        ->where('Prova.descrizione = :descrizione')
+                        ->setParameter('descrizione', $descrizionetest2)
+                        ->getQuery()->getResult();
 
         $this->assertEquals(count($qb3), 0);
+
+        $qb = $em->createQueryBuilder();
+        $qb->delete();
+        $qb->from('BiCoreBundle:Colonnetabelle', 'o');
+        $qb->where('o.nometabella= :tabella');
+        $qb->setParameter('tabella', 'Prova');
+        $qb->getQuery()->execute();
+        $em->clear();
     }
 
     /**
@@ -171,6 +184,7 @@ class PannelloAmministrazioneControllerFunctionalTest extends BiTestAuthorizedCl
      */
     public function tearDown()
     {
+        static::createPantherClient()->quit();
         parent::tearDown();
         cleanFilesystem();
         removecache();
