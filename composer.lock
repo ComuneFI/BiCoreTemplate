@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.3.13",
+            "version": "v0.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "7674399dc6de8305b3ae7a49368fddd66ed4b9d1"
+                "reference": "9ba489ed8c9e34dbd8362a6fd97dddec453a6b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/7674399dc6de8305b3ae7a49368fddd66ed4b9d1",
-                "reference": "7674399dc6de8305b3ae7a49368fddd66ed4b9d1",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/9ba489ed8c9e34dbd8362a6fd97dddec453a6b72",
+                "reference": "9ba489ed8c9e34dbd8362a6fd97dddec453a6b72",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-06-12T10:28:05+00:00"
+            "time": "2019-06-14T07:05:53+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -6219,16 +6219,16 @@
     "packages-dev": [
         {
             "name": "facebook/webdriver",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-webdriver.git",
-                "reference": "9a52b1ac036743c31bc127fd7f2f4710e2bc968a"
+                "reference": "e43de70f3c7166169d0f14a374505392734160e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/9a52b1ac036743c31bc127fd7f2f4710e2bc968a",
-                "reference": "9a52b1ac036743c31bc127fd7f2f4710e2bc968a",
+                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/e43de70f3c7166169d0f14a374505392734160e5",
+                "reference": "e43de70f3c7166169d0f14a374505392734160e5",
                 "shasum": ""
             },
             "require": {
@@ -6275,7 +6275,7 @@
                 "selenium",
                 "webdriver"
             ],
-            "time": "2019-06-10T14:32:25+00:00"
+            "time": "2019-06-13T08:02:18+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
