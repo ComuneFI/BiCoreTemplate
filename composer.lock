@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "65d7320f148f13b19b382ab304d40832",
@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.3.20",
+            "version": "v0.3.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "88749b4950495df76c98e919eb615c24ca9c4a03"
+                "reference": "b1beea9ceab2d142149ab140de56615173e4ed08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/88749b4950495df76c98e919eb615c24ca9c4a03",
-                "reference": "88749b4950495df76c98e919eb615c24ca9c4a03",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/b1beea9ceab2d142149ab140de56615173e4ed08",
+                "reference": "b1beea9ceab2d142149ab140de56615173e4ed08",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-09-20T13:04:54+00:00"
+            "time": "2019-09-20T18:10:57+00:00"
         },
         {
             "name": "doctrine/annotations",
