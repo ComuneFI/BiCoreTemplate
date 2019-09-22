@@ -1,6 +1,5 @@
 {% extends "BiCoreBundle::layout.html.twig" %}
 
 {% block content %}
-
-    <h1>Benvenuto {{app.user.username}}<h1>
-        {% endblock %}
+    <h1>{{  'home.benvenuto'|trans({}, 'App') }} {{app.user.username}}</h1>
+{% endblock %}

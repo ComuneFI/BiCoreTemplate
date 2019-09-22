@@ -158,9 +158,6 @@
     "ralouphie/getallheaders": {
         "version": "2.0.5"
     },
-    "sensio/distribution-bundle": {
-        "version": "v5.0.23"
-    },
     "sensiolabs/security-checker": {
         "version": "4.0",
         "recipe": {
