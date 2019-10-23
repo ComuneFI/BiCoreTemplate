@@ -10,6 +10,7 @@
         "symfony/webpack-encore-bundle": "^1.5",
         "symfony/framework-bundle": "^3.4",
         "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/process": "^3.4",
         "sensiolabs/security-checker": "^5.0"
     },
     "require-dev": {
