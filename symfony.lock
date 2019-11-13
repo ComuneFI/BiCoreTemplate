@@ -188,9 +188,6 @@
     "symfony/cache": {
         "version": "v3.4.18"
     },
-    "symfony/cache-contracts": {
-        "version": "v1.1.7"
-    },
     "symfony/class-loader": {
         "version": "v3.4.18"
     },
@@ -323,6 +320,9 @@
             "ref": "0e548dd90adba18fabd4ef419b14d361fe4d6c74"
         }
     },
+    "symfony/polyfill-apcu": {
+        "version": "v1.12.0"
+    },
     "symfony/polyfill-ctype": {
         "version": "v1.10.0"
     },
@@ -338,6 +338,9 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
+    "symfony/polyfill-php56": {
+        "version": "v1.12.0"
+    },
     "symfony/polyfill-php70": {
         "version": "v1.10.0"
     },
@@ -346,6 +349,9 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.11.0"
+    },
+    "symfony/polyfill-util": {
+        "version": "v1.12.0"
     },
     "symfony/process": {
         "version": "v3.4.18"
@@ -427,9 +433,6 @@
     },
     "symfony/var-dumper": {
         "version": "v4.2.1"
-    },
-    "symfony/var-exporter": {
-        "version": "v4.2.0"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
