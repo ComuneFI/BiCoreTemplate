@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.4.1",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "69bbdb261b45c7f2d2fcd9dddfc21187fea42bf6"
+                "reference": "38ba647ec91802141a91e4e097d6c695adb29486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/69bbdb261b45c7f2d2fcd9dddfc21187fea42bf6",
-                "reference": "69bbdb261b45c7f2d2fcd9dddfc21187fea42bf6",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/38ba647ec91802141a91e4e097d6c695adb29486",
+                "reference": "38ba647ec91802141a91e4e097d6c695adb29486",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-12-01T17:20:45+00:00"
+            "time": "2019-12-02T17:05:07+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1430,27 +1430,27 @@
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
-                "reference": "4c6eb91c90c72bb17cbf26f8f7b0f9c908db16f1"
+                "reference": "81cf14bf3db5e6fe3ef0442fc762891422005d3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/4c6eb91c90c72bb17cbf26f8f7b0f9c908db16f1",
-                "reference": "4c6eb91c90c72bb17cbf26f8f7b0f9c908db16f1",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/81cf14bf3db5e6fe3ef0442fc762891422005d3b",
+                "reference": "81cf14bf3db5e6fe3ef0442fc762891422005d3b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "symfony/console": "~3.0|^4.0|^5.0",
-                "symfony/framework-bundle": "~3.0|^4.0|^5.0",
-                "symfony/serializer": "~3.0|^4.0|^5.0",
+                "symfony/console": "~3.3|^4.0|^5.0",
+                "symfony/framework-bundle": "~3.3|^4.0|^5.0",
+                "symfony/serializer": "~3.3|^4.0|^5.0",
                 "willdurand/jsonp-callback-validator": "~1.0"
             },
             "require-dev": {
-                "symfony/expression-language": "~3.0|^4.0|^5.0",
+                "symfony/expression-language": "~3.3|^4.0|^5.0",
                 "symfony/phpunit-bridge": "^3.3|^4.0"
             },
             "type": "symfony-bundle",
@@ -1488,7 +1488,7 @@
                 "javascript",
                 "routing"
             ],
-            "time": "2019-12-01T12:41:50+00:00"
+            "time": "2019-12-02T08:01:22+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -2152,16 +2152,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "f734783d826bd84c3d54fcf7b71c37ab9bac4b04"
+                "reference": "1648dc9ebef6ebe0c5a172e16cf66732918416e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/f734783d826bd84c3d54fcf7b71c37ab9bac4b04",
-                "reference": "f734783d826bd84c3d54fcf7b71c37ab9bac4b04",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/1648dc9ebef6ebe0c5a172e16cf66732918416e0",
+                "reference": "1648dc9ebef6ebe0c5a172e16cf66732918416e0",
                 "shasum": ""
             },
             "require": {
@@ -2241,7 +2241,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2019-11-18T11:33:05+00:00"
+            "time": "2019-12-01T23:13:51+00:00"
         },
         {
             "name": "psr/cache",
