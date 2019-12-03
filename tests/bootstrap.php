@@ -17,7 +17,7 @@ if (!isset($_SERVER['APP_ENV'])) {
     if (!class_exists(Dotenv::class)) {
         throw new \RuntimeException('APP_ENV environment variable is not defined. You need to define environment variables for configuration or add "symfony/dotenv" as a Composer dependency to load variables from a .env file.');
     }
-    (new Dotenv())->load(__DIR__ . '/../.env');
+    (new Dotenv(true))->load(__DIR__ . '/../.env');
 }
 
 $classLoader = new \Composer\Autoload\ClassLoader();
@@ -55,12 +55,13 @@ function databaseinit()
 function removecache()
 {
     $vendorDir = dirname(dirname(__FILE__));
-    $envs = ["test", "dev", "prod"];
+    //$envs = ['test', 'dev', 'prod'];
+    $envs[] = getenv("APP_ENV");
     foreach ($envs as $env) {
         $cachedir = $vendorDir . '/var/cache/' . $env;
         if (file_exists($cachedir)) {
             $command = 'rm -rf ' . $cachedir;
-            $process = new Process($command);
+            $process = Process::fromShellCommandline($command);
             $process->setTimeout(60 * 100);
             $process->run();
             if (!$process->isSuccessful()) {
