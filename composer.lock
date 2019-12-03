@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "38ba647ec91802141a91e4e097d6c695adb29486"
+                "reference": "a50db40c82fa6d097ed2a464191d6d95cf3b0e36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/38ba647ec91802141a91e4e097d6c695adb29486",
-                "reference": "38ba647ec91802141a91e4e097d6c695adb29486",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/a50db40c82fa6d097ed2a464191d6d95cf3b0e36",
+                "reference": "a50db40c82fa6d097ed2a464191d6d95cf3b0e36",
                 "shasum": ""
             },
             "require": {
@@ -120,8 +120,7 @@
                 "symfony/panther": "^0.6.0",
                 "symfony/profiler-pack": "^1.0",
                 "symfony/test-pack": "^1.0",
-                "symfony/var-dumper": "4.4.*",
-                "symfony/web-server-bundle": "4.4.*"
+                "symfony/var-dumper": "4.4.*"
             },
             "suggest": {
                 "ext-apcu": "The extension required to use cache"
@@ -180,7 +179,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-12-02T17:05:07+00:00"
+            "time": "2019-12-03T20:48:45+00:00"
         },
         {
             "name": "doctrine/annotations",
