@@ -6,4 +6,5 @@ twig:
         database_url: "%env(resolve:DATABASE_URL)%"
     form_themes:
         - bootstrap_4_layout.html.twig
+    exception_controller: null
 
