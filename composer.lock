@@ -64,16 +64,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "28dfaa7cd963f0a3d735d4260a4e1fccc49130ff"
+                "reference": "83a02d1f6d2cecb69afcb95714743215b6967567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/28dfaa7cd963f0a3d735d4260a4e1fccc49130ff",
-                "reference": "28dfaa7cd963f0a3d735d4260a4e1fccc49130ff",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/83a02d1f6d2cecb69afcb95714743215b6967567",
+                "reference": "83a02d1f6d2cecb69afcb95714743215b6967567",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.0",
                 "phpmd/phpmd": "^2.6",
-                "sebastian/phpcpd": "^3.0",
+                "sebastian/phpcpd": "^4.0",
                 "sensiolabs/security-checker": "^6.0",
                 "squizlabs/php_codesniffer": "^3.3",
                 "symfony/browser-kit": "4.4.*",
@@ -179,7 +179,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2019-12-06T22:24:38+00:00"
+            "time": "2019-12-06T23:43:44+00:00"
         },
         {
             "name": "doctrine/annotations",
