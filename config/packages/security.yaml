@@ -13,6 +13,7 @@ security:
             id: fos_user.user_provider.username
             
     firewalls:
+        #project_extension_firewall_hook
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
