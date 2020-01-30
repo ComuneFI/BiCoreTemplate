@@ -1,6 +1,8 @@
 # This file is the entry point to configure your own HTTP routes.
 # Files in the routes/ subdirectory configure the routes for your dependencies.
 
+#project_extension_routes_hook
+
 fi_pannello_amministrazione:
     resource: "@PannelloAmministrazioneBundle/Resources/config/routing.yml"
     prefix:   /
