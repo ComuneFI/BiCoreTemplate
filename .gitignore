@@ -3,7 +3,6 @@
 /.env.*.local
 /public/bundles/
 /var/
-/vendor/
 ###< symfony/framework-bundle ###
 /nbproject/private/
 ###> symfony/phpunit-bridge ###
@@ -18,3 +17,11 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+/vendor/
