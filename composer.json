@@ -23,6 +23,7 @@
         "preferred-install": {
             "*": "dist"
         },
+        "bin-dir": "bin",
         "sort-packages": true
     },
     "autoload": {
