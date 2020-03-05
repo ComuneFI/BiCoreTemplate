@@ -62,7 +62,7 @@
     </target>
     
     <target name="php-security-checker" description="Check your composer dependencies for insecure components">
-        <exec executable="vendor/bin/security-checker" failonerror="false">
+        <exec executable="bin/security-checker" failonerror="false">
             <arg value="security:check"/>
             <arg value="--verbose"/>
             <arg value="--end-point=https://security.symfony.com/check_lock"/>            
@@ -71,7 +71,7 @@
     </target>
 
     <target name="phpunit-ci" description="Run unit tests with PHPUnit">
-        <exec executable="vendor/bin/simple-phpunit" failonerror="true">
+        <exec executable="bin/simple-phpunit" failonerror="true">
             <env key="PANTHER_NO_HEADLESS" value="0"/>
         </exec>
     </target>
