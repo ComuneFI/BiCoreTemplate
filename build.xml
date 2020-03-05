@@ -62,7 +62,7 @@
     </target>
     
     <target name="php-security-checker" description="Check your composer dependencies for insecure components">
-        <exec executable="vendor/bin/security-checker" failonerror="false">
+        <exec executable="bin/security-checker" failonerror="false">
             <arg value="security:check"/>
             <arg value="--verbose"/>
             <arg value="--end-point=https://security.symfony.com/check_lock"/>            
