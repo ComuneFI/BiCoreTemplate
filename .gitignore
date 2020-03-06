@@ -25,3 +25,6 @@ yarn-error.log
 !bin/console
 !bin/symfony_requirements
 /vendor/
+
+#BiCoreBundle
+/doc/*.bak
