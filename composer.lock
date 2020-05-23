@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "725c4f663a1cfcbd8d2d166246a2b7e0",
+    "content-hash": "faddb09f8c27b72faa7fe66bbb69f860",
     "packages": [
         {
             "name": "comunedifirenze/bicorebundle",

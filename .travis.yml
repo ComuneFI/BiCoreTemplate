@@ -1,6 +1,7 @@
+dist: bionic
 language: php
-
 sudo: false
+
 cache:
     directories:
         - $HOME/.composer/cache/files
@@ -17,12 +18,18 @@ env:
     - DB=sqlite3
 
 addons:
-  chrome: stable
+  #chrome: stable
 
 before_script:
   - chmod +x bin/console
   - sudo apt-get install ant
   - phpenv config-add ./build/travis.php.ini
+
+  - export CHROME_BIN=chromium-browser
+  - CHROME_MAIN_VERSION=`google-chrome-stable --version | sed -E 's/(^Google Chrome |\.[0-9]+ )//g'`
+  - CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAIN_VERSION"`
+  - curl "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O
+  - unzip chromedriver_linux64.zip -d ~/bin
 
 script:
   - ant
@@ -43,7 +50,7 @@ script:
   #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
   #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
   - composer validate --strict
-  
+
 after_success:
   - rm var/cache/dbtest.sqlite
 

@@ -1,4 +1,6 @@
 {
+    "name": "comunedifirenze/bicoretemplate",
+    "description": "BiCoreTemplate",
     "type": "project",
     "license": "MIT",
     "require": {
