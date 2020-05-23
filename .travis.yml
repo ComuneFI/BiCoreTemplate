@@ -1,6 +1,7 @@
+dist: bionic
 language: php
-
 sudo: false
+
 cache:
     directories:
         - $HOME/.composer/cache/files
