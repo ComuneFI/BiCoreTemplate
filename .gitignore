@@ -25,6 +25,7 @@ yarn-error.log
 !bin/console
 !bin/symfony_requirements
 /vendor/
+composer.phar
 
 #BiCoreBundle
 /doc/*.bak

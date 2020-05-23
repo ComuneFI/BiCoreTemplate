@@ -8,6 +8,7 @@ cache:
         - $HOME/symfony-bridge/.phpunit
 php:
   - 7.2
+  - 7.4
 
 services:
   - xvfb
