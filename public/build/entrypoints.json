@@ -13,11 +13,11 @@
       "js": [
         "/build/runtime.420770e4.js",
         "/build/0.fdf904a5.js",
-        "/build/1.e048fbd1.js",
-        "/build/bootstrapitalia.12a4c8ff.js"
+        "/build/1.5be619b9.js",
+        "/build/bootstrapitalia.bf02c329.js"
       ],
       "css": [
-        "/build/bootstrapitalia.025d92a5.css"
+        "/build/bootstrapitalia.9b8e10f4.css"
       ]
     },
     "bicore": {
@@ -42,8 +42,8 @@
       "js": [
         "/build/runtime.420770e4.js",
         "/build/0.fdf904a5.js",
-        "/build/1.e048fbd1.js",
-        "/build/bitabella.c8b838a2.js"
+        "/build/1.5be619b9.js",
+        "/build/bitabella.fae47e5f.js"
       ],
       "css": [
         "/build/bitabella.c23c4a13.css"
@@ -53,8 +53,8 @@
       "js": [
         "/build/runtime.420770e4.js",
         "/build/0.fdf904a5.js",
-        "/build/1.e048fbd1.js",
-        "/build/bidemo.9b17b62b.js"
+        "/build/1.5be619b9.js",
+        "/build/bidemo.9bb31ea9.js"
       ],
       "css": [
         "/build/bidemo.c23c4a13.css"
