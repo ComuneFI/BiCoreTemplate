@@ -8,6 +8,7 @@
                     bicorebundle-drop-database,
                     bicorebundle-install,
                     php-security-checker, 
+                    upgradechromedriver, 
                     phpunit-ci,
                     finish">
     </target>
@@ -67,6 +68,11 @@
             <arg value="--verbose"/>
             <arg value="--end-point=https://security.symfony.com/check_lock"/>            
             <arg value="composer.lock"/>
+        </exec>
+    </target>
+
+    <target name="upgradechromedriver" description="Upgrade chromedriver for panther issue #356">
+        <exec executable="build/upgradePantherChromedriver.sh" failonerror="false">
         </exec>
     </target>
 
