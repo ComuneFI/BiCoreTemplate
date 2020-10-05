@@ -77,16 +77,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "ed5ad13478e4d4aee5f35d5b6d558354ecc8ca89"
+                "reference": "c152747f3b51b89d70ec8ad3d05a25c64b42d24d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/ed5ad13478e4d4aee5f35d5b6d558354ecc8ca89",
-                "reference": "ed5ad13478e4d4aee5f35d5b6d558354ecc8ca89",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/c152747f3b51b89d70ec8ad3d05a25c64b42d24d",
+                "reference": "c152747f3b51b89d70ec8ad3d05a25c64b42d24d",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2020-10-05T11:05:09+00:00"
+            "time": "2020-10-05T15:34:21+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -7092,16 +7092,16 @@
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d"
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/77ce1c3627c9f39643acd9af086631f842c50c4d",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/e2eaa60b558f26a4b0354e1bbb25636efaaad105",
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105",
                 "shasum": ""
             },
             "require": {
@@ -7113,7 +7113,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -7163,7 +7163,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-07T11:33:47+00:00"
+            "time": "2020-09-28T13:05:58+00:00"
         },
         {
             "name": "symfony/twig-bridge",
