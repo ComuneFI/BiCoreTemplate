@@ -8,10 +8,10 @@
                     bicorebundle-drop-database,
                     bicorebundle-install,
                     php-security-checker, 
-                    upgradechromedriver, 
                     phpunit-ci,
                     finish">
     </target>
+    <!--upgradechromedriver, -->
     
     <target name="clean" description="Cleanup build">
         <delete dir="build/artifacts/coverage"/>
