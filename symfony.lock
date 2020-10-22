@@ -86,9 +86,6 @@
             "ref": "370bcf99b04c0dfd0b545745aad622d757af5e1b"
         }
     },
-    "friendsofsymfony/user-bundle": {
-        "version": "v2.1.2"
-    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -100,6 +97,9 @@
     },
     "hanneskod/classtools": {
         "version": "1.2.1"
+    },
+    "kimai/user-bundle": {
+        "version": "1.2.2"
     },
     "maennchen/zipstream-php": {
         "version": "2.1.0"
@@ -439,9 +439,6 @@
             "version": "2.5",
             "ref": "3db029c03e452b4a23f7fc45cec7c922c2247eb8"
         }
-    },
-    "symfony/templating": {
-        "version": "v3.4.18"
     },
     "symfony/translation": {
         "version": "3.3",
