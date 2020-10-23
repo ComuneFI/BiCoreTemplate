@@ -8,6 +8,7 @@
                     bicorebundle-drop-database,
                     bicorebundle-install,
                     php-security-checker, 
+                    phpstan-ci,
                     phpunit-ci,
                     finish">
     </target>
@@ -73,6 +74,13 @@
 
     <target name="upgradechromedriver" description="Upgrade chromedriver for panther issue #356">
         <exec executable="build/upgradePantherChromedriver.sh" failonerror="false">
+        </exec>
+    </target>
+
+    <target name="phpstan-ci" description="PHPStan finds bugs in your code without writing tests">
+        <exec executable="bin/phpstan" failonerror="true">
+            <arg value="analyze"/>
+            <arg value="src"/>
         </exec>
     </target>
 
