@@ -1,6 +1,6 @@
+os: linux
 dist: bionic
 language: php
-sudo: false
 
 cache:
     directories:
@@ -15,7 +15,7 @@ services:
 
 # Configure different DB environments
 env:
-  matrix:
+  jobs:
     - DB=sqlite3
 
 addons:
