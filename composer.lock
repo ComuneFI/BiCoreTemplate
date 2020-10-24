@@ -77,16 +77,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "a24e6713b0726b2af5fa62e270ad674d4121566c"
+                "reference": "2a231366b26a5e52253c8479d93399413bfc2004"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/a24e6713b0726b2af5fa62e270ad674d4121566c",
-                "reference": "a24e6713b0726b2af5fa62e270ad674d4121566c",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/2a231366b26a5e52253c8479d93399413bfc2004",
+                "reference": "2a231366b26a5e52253c8479d93399413bfc2004",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "hanneskod/classtools": "^1.2",
                 "kimai/user-bundle": "^1.2",
                 "mysql-workbench-schema-exporter/doctrine2-exporter": "3.0.*",
-                "mysql-workbench-schema-exporter/mysql-workbench-schema-exporter": "3.0.*",
+                "mysql-workbench-schema-exporter/mysql-workbench-schema-exporter": "^3.0",
                 "php": ">=7.2",
                 "phpoffice/phpspreadsheet": "^1.4",
                 "symfony/asset": "4.4.*",
@@ -196,20 +196,20 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2020-10-23T18:38:19+00:00"
+            "time": "2020-10-24T18:26:56+00:00"
         },
         {
             "name": "doctrine/annotations",
-            "version": "1.10.4",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "bfe91e31984e2ba76df1c1339681770401ec262f"
+                "reference": "88fb6fb1dae011de24dd6b632811c1ff5c2928f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bfe91e31984e2ba76df1c1339681770401ec262f",
-                "reference": "bfe91e31984e2ba76df1c1339681770401ec262f",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/88fb6fb1dae011de24dd6b632811c1ff5c2928f5",
+                "reference": "88fb6fb1dae011de24dd6b632811c1ff5c2928f5",
                 "shasum": ""
             },
             "require": {
@@ -219,13 +219,14 @@
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
+                "doctrine/coding-standard": "^6.0 || ^8.1",
                 "phpstan/phpstan": "^0.12.20",
                 "phpunit/phpunit": "^7.5 || ^9.1.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9.x-dev"
+                    "dev-master": "1.11.x-dev"
                 }
             },
             "autoload": {
@@ -260,13 +261,13 @@
                 }
             ],
             "description": "Docblock Annotations Parser",
-            "homepage": "http://www.doctrine-project.org",
+            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
             "keywords": [
                 "annotations",
                 "docblock",
                 "parser"
             ],
-            "time": "2020-08-10T19:35:50+00:00"
+            "time": "2020-10-17T22:05:33+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -2258,16 +2259,16 @@
         },
         {
             "name": "mysql-workbench-schema-exporter/mysql-workbench-schema-exporter",
-            "version": "v3.0.4",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mysql-workbench-schema-exporter/mysql-workbench-schema-exporter.git",
-                "reference": "57540bfdc091883e39a30500e98988065b373990"
+                "reference": "6e626b2388588e32003ac5f51f92a5fdda34e219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mysql-workbench-schema-exporter/mysql-workbench-schema-exporter/zipball/57540bfdc091883e39a30500e98988065b373990",
-                "reference": "57540bfdc091883e39a30500e98988065b373990",
+                "url": "https://api.github.com/repos/mysql-workbench-schema-exporter/mysql-workbench-schema-exporter/zipball/6e626b2388588e32003ac5f51f92a5fdda34e219",
+                "reference": "6e626b2388588e32003ac5f51f92a5fdda34e219",
                 "shasum": ""
             },
             "require": {
@@ -2280,7 +2281,7 @@
             ],
             "type": "library",
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "MwbExporter\\": "lib/"
                 }
             },
@@ -2318,7 +2319,7 @@
                 "sequelizejs",
                 "zend"
             ],
-            "time": "2020-07-17T15:12:47+00:00"
+            "time": "2020-09-29T08:36:52+00:00"
         },
         {
             "name": "nikic/php-parser",
