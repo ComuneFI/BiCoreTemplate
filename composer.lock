@@ -77,16 +77,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.1.2",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "2a231366b26a5e52253c8479d93399413bfc2004"
+                "reference": "2572e178321fae7e31f600946d7c476b99e97c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/2a231366b26a5e52253c8479d93399413bfc2004",
-                "reference": "2a231366b26a5e52253c8479d93399413bfc2004",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/2572e178321fae7e31f600946d7c476b99e97c83",
+                "reference": "2572e178321fae7e31f600946d7c476b99e97c83",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,8 @@
                 "symfony/polyfill-ctype": "*",
                 "symfony/polyfill-iconv": "*",
                 "symfony/polyfill-php56": "*",
-                "symfony/polyfill-php70": "*"
+                "symfony/polyfill-php70": "*",
+                "symfony/polyfill-php71": "*"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.0",
@@ -196,7 +197,7 @@
             "keywords": [
                 "bicorebundle bootstrapitalia jquery bootstrap"
             ],
-            "time": "2020-10-24T18:26:56+00:00"
+            "time": "2020-10-24T21:28:00+00:00"
         },
         {
             "name": "doctrine/annotations",
