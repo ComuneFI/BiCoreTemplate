@@ -2,6 +2,9 @@
     "comunedifirenze/bicorebundle": {
         "version": "v0.1.0"
     },
+    "comunedifirenze/user-bundle": {
+        "version": "1.2.2.2"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -62,9 +65,6 @@
     "doctrine/persistence": {
         "version": "v1.0.1"
     },
-    "doctrine/reflection": {
-        "version": "v1.0.0"
-    },
     "doctrine/sql-formatter": {
         "version": "1.0.1"
     },
@@ -97,9 +97,6 @@
     },
     "hanneskod/classtools": {
         "version": "1.2.1"
-    },
-    "kimai/user-bundle": {
-        "version": "1.2.2"
     },
     "maennchen/zipstream-php": {
         "version": "2.1.0"
