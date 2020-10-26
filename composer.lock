@@ -208,16 +208,16 @@
         },
         {
             "name": "comunedifirenze/user-bundle",
-            "version": "1.2.2.3",
+            "version": "1.2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/user-bundle.git",
-                "reference": "2571ed693192db92ff8d53a0709603492d1cdeff"
+                "reference": "271132244517a348d46129fe9cdd62529a27776d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/user-bundle/zipball/2571ed693192db92ff8d53a0709603492d1cdeff",
-                "reference": "2571ed693192db92ff8d53a0709603492d1cdeff",
+                "url": "https://api.github.com/repos/ComuneFI/user-bundle/zipball/271132244517a348d46129fe9cdd62529a27776d",
+                "reference": "271132244517a348d46129fe9cdd62529a27776d",
                 "shasum": ""
             },
             "require": {
@@ -275,9 +275,9 @@
             "description": "Comune di Firenze Symfony UserBundle",
             "homepage": "https://github.com/ComuneFI",
             "support": {
-                "source": "https://github.com/ComuneFI/user-bundle/tree/1.2.2.3"
+                "source": "https://github.com/ComuneFI/user-bundle/tree/1.2.2.4"
             },
-            "time": "2020-10-25T18:44:12+00:00"
+            "time": "2020-10-26T14:15:32+00:00"
         },
         {
             "name": "doctrine/annotations",
