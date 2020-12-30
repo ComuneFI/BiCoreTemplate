@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/ComuneFI/BiCoreTemplate.svg?branch=master)](https://travis-ci.com/ComuneFI/BiCoreTemplate)
-
 # BiCoreTemplate
 
 > ⚠️ **WORK IN PROGRESS** ⚠️

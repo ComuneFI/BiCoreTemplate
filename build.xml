@@ -9,10 +9,10 @@
                     bicorebundle-install,
                     php-security-checker, 
                     phpstan-ci,
+                    upgradechromedriver,
                     phpunit-ci,
                     finish">
     </target>
-    <!--upgradechromedriver, -->
     
     <target name="clean" description="Cleanup build">
         <delete dir="build/artifacts/coverage"/>
@@ -88,6 +88,8 @@
     <target name="phpunit-ci" description="Run unit tests with PHPUnit">
         <exec executable="bin/simple-phpunit" failonerror="true">
             <env key="PANTHER_NO_HEADLESS" value="0"/>
+            <env key="PANTHER_NO_SANDBOX" value="1"/>
+            <env key="PANTHER_WEB_SERVER_PORT" value="9080"/>
         </exec>
     </target>
 </project>

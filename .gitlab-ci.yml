@@ -1,0 +1,75 @@
+image: $CI_REGISTRY/docker/php7.4-xdebug-apache
+
+services:
+  - postgres:12.2-alpine
+
+stages:
+    - build
+    - cleanup_build
+    
+variables:
+  # symfony 4
+  http_proxy: 'http://proxyhttp.comune.intranet:8080/'
+  https_proxy: 'http://proxyhttps.comune.intranet:8080/'
+  ftp_proxy: 'http://proxyftp.comune.intranet:8080/'
+  no_proxy: 'localhost,127.0.0.1,.localhost,.comune.intranet'
+  https_proxy_request_fulluri: 0
+  HTTP_PROXY: 'http://proxyhttp.comune.intranet:8080/'
+  HTTPS_PROXY: 'http://proxyhttps.comune.intranet:8080/'
+  FTP_PROXY: 'http://proxyftp.comune.intranet:8080/'
+  NO_PROXY: 'localhost,127.0.0.1,.localhost,.comune.intranet'
+  HTTPS_PROXY_REQUEST_FULLURI: 0
+  NSS_SSL_CBC_RANDOM_IV: 0
+  
+  ANT_OPTS: '-Dhttp.proxyHost=proxyhttp.comune.intranet -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxyhttps.comune.intranet -Dhttps.proxyPort=8080'
+  
+  POSTGRES_DB: bicorebundletest
+  POSTGRES_USER: admin
+  POSTGRES_PASSWORD: "adminpass"
+  
+  DATABASE_URL: $DATABASE_URL
+  MAILER_DSN: $MAILER_DSN
+  
+  DISPLAY: ":0.0"
+  
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - vendor/
+    - .composer_cache
+
+before_script:
+    - php -m
+    - apt-get update && apt-get install -y xvfb fontconfig pcregrep
+    - Xvfb :0 -ac -screen 0 1024x768x24 &
+    - echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    - composer config cache-files-dir .composer_cache
+
+build:
+#    only:
+#      refs:
+#        - develop
+    stage: build
+    script:
+      - ant
+      - ./bin/console lint:yaml config --parse-tags
+      # this checks that the Twig template files contain no syntax errors
+      - ./bin/console lint:twig templates --env=prod
+      # this checks that the XLIFF translations contain no syntax errors
+      - ./bin/console lint:xliff translations
+      # this checks that arguments injected into services match type declarations
+      - ./bin/console lint:container
+      # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
+      # this checks that the application doesn't use dependencies with known security vulnerabilities
+      #- ./bin/console security:check
+      # this checks that Doctrine's mapping configurations are valid
+      - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
+      #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
+      - composer validate --strict
+  
+cleanup_build_job:
+  stage: cleanup_build
+  script:
+    - cat ./var/logs/test.log
+  when: on_failure
