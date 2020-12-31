@@ -1,8 +1,5 @@
 image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 
-services:
-  - postgres:12.2-alpine
-
 stages:
     - build
     - cleanup_build
@@ -23,11 +20,6 @@ variables:
   
   ANT_OPTS: '-Dhttp.proxyHost=proxyhttp.comune.intranet -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxyhttps.comune.intranet -Dhttps.proxyPort=8080'
   
-  POSTGRES_DB: bicorebundletest
-  POSTGRES_USER: admin
-  POSTGRES_PASSWORD: "adminpass"
-  
-  DATABASE_URL: $DATABASE_URL
   MAILER_DSN: $MAILER_DSN
   
   DISPLAY: ":0.0"
@@ -45,11 +37,13 @@ before_script:
     - echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     - composer config cache-files-dir .composer_cache
 
-build:
+build_postgres:
 #    only:
 #      refs:
 #        - develop
     stage: build
+    services:
+      - postgres:12.2-alpine
     script:
       - ant
       - ./bin/console lint:yaml config --parse-tags
@@ -67,7 +61,41 @@ build:
       #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
       #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
       - composer validate --strict
+    variables:
+      DATABASE_URL: $POSTGRES_DATABASE_URL
+      POSTGRES_DB: bicorebundletest
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: "adminpass"
   
+build_mysql:
+#    only:
+#      refs:
+#        - develop
+    stage: build
+    services:
+      - mysql:8.0.22
+    script:
+      - ant
+      - ./bin/console lint:yaml config --parse-tags
+      # this checks that the Twig template files contain no syntax errors
+      - ./bin/console lint:twig templates --env=prod
+      # this checks that the XLIFF translations contain no syntax errors
+      - ./bin/console lint:xliff translations
+      # this checks that arguments injected into services match type declarations
+      - ./bin/console lint:container
+      # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
+      # this checks that the application doesn't use dependencies with known security vulnerabilities
+      #- ./bin/console security:check
+      # this checks that Doctrine's mapping configurations are valid
+      - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
+      #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
+      - composer validate --strict
+    variables:
+      DATABASE_URL: $MYSQL_DATABASE_URL
+      MYSQL_DATABASE: bicorebundletest
+      MYSQL_ROOT_PASSWORD: "adminpass"
+      
 cleanup_build_job:
   stage: cleanup_build
   script:
