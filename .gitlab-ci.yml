@@ -71,6 +71,8 @@ build_postgres:
       POSTGRES_DB: bicorebundletest
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: "adminpass"
+    only:
+      - develop
   
 build_mysql:
 #    only:
@@ -107,6 +109,8 @@ build_mysql:
       DATABASE_URL: $MYSQL_DATABASE_URL
       MYSQL_DATABASE: bicorebundletest
       MYSQL_ROOT_PASSWORD: "adminpass"
+    only:
+      - develop
       
 build_sqlite:
 #    only:
@@ -134,6 +138,8 @@ build_sqlite:
       - composer validate --strict
     variables:
       DATABASE_URL: $SQLITE_DATABASE_URL
+    only:
+      - develop
       
 deploy_test_job:
   stage: deploy
