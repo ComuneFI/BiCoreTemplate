@@ -2,7 +2,8 @@ image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 
 stages:
     - build
-    - deploy
+    - deploy_test
+    - deploy_prod
     - cleanup_build
     
 variables:
@@ -136,7 +137,7 @@ build_sqlite:
       DATABASE_URL: $SQLITE_DATABASE_URL
       
 deploy_test_job:
-  stage: deploy
+  stage: deploy_test
   image: docker/compose
   script:
     - env
@@ -153,7 +154,7 @@ deploy_test_job:
     name: test
   
 deploy_prod_job:
-  stage: deploy
+  stage: deploy_prod
   image: docker/compose
   script:
     - env
