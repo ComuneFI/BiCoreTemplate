@@ -155,6 +155,8 @@ deploy_test_job:
 deploy_prod_job:
   stage: deploy
   image: docker/compose
+  script:
+    - env
     - echo "SPA debug:"
     - echo "Registry:"$CI_REGISTRY
     - echo "Latest image tag:"$TAG_LATEST
