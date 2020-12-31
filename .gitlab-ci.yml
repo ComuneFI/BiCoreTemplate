@@ -128,7 +128,7 @@ build_sqlite:
       
 deploy_job:
   stage: deploy
-  script:
+  image: docker/compose
   script:
     - docker-compose build
     - echo "SPA debug:"
