@@ -205,3 +205,5 @@ cleanup_build_job:
   script:
     - cat ./var/logs/test.log
   when: on_failure
+  only:
+    - develop
