@@ -21,8 +21,8 @@ variables:
   
   ANT_OPTS: '-Dhttp.proxyHost=proxyhttp.comune.intranet -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxyhttps.comune.intranet -Dhttps.proxyPort=8080'
   
-  TAG_COMMIT: $CI_REGISTRY/pobogdso/bicoretemplate:$CI_COMMIT_TAG
-  TAG_LATEST: $CI_REGISTRY/pobogdso/bicoretemplate:latest
+  TAG_COMMIT: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  TAG_LATEST: $CI_REGISTRY_IMAGE:latest
   
   MAILER_DSN: $MAILER_DSN
   
@@ -162,8 +162,8 @@ deploy_test_job:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_LATEST
   script:
-    - ssh $USER_AT_DOCKER "sed -i \"s/APP_IMAGE_TAG=.*/APP_IMAGE_TAG=latest/\" /home/po.bogdso/bicoretemplate/.env"
-    - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/bicoretemplate && docker-compose down && docker-compose up -d'
+    - ssh $USER_AT_DOCKER "sed -i \"s/APP_IMAGE_TAG=.*/APP_IMAGE_TAG=latest/\" /home/po.bogdso/$CI_PROJECT_NAME/.env"
+    - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/$CI_PROJECT_NAME && docker-compose down && docker-compose up -d'
   only:
     - develop
   when: on_success
@@ -192,8 +192,8 @@ deploy_prod_job:
     - docker tag $TAG_LATEST $TAG_COMMIT
     - docker push $TAG_COMMIT
   script:
-    - ssh $USER_AT_DOCKER "sed -i \"s/APP_IMAGE_TAG=.*/APP_IMAGE_TAG=$CI_COMMIT_TAG/\" /home/po.bogdso/bicoretemplate/.env"
-    - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/bicoretemplate && docker-compose down && docker-compose up -d'
+    - ssh $USER_AT_DOCKER "sed -i \"s/APP_IMAGE_TAG=.*/APP_IMAGE_TAG=$CI_COMMIT_TAG/\" /home/po.bogdso/$CI_PROJECT_NAME/.env"
+    - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/$CI_PROJECT_NAME && docker-compose down && docker-compose up -d'
   when: manual
   environment:
     name: prod
@@ -205,3 +205,5 @@ cleanup_build_job:
   script:
     - cat ./var/logs/test.log
   when: on_failure
+  only:
+    - develop
