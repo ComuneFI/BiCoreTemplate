@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  app:
+    image: gitlab.comune.intranet:5050/pobogdso/bicoretemplate
+    container_name: bicoretemplate
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - elknet
+    ports:
+      - "${HOST_PORT}:${HTTP_PORT}"
+    volumes:
+        - ./var/log:/var/www/var/log
+        - ./var/cache:/var/www/var/cache
+    env_file:
+      - ./.env
+networks:
+  elknet:
+    external:
+      name: elknet

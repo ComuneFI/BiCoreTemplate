@@ -2,6 +2,7 @@ image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 
 stages:
     - build
+    - deploy
     - cleanup_build
     
 variables:
@@ -125,6 +126,21 @@ build_sqlite:
     variables:
       DATABASE_URL: $SQLITE_DATABASE_URL
       
+deploy_job:
+  stage: deploy
+  script:
+  script:
+    - docker-compose build
+    - echo "SPA debug:"
+    - echo "Registry:"$CI_REGISTRY
+    - echo "Latest image tag:"$TAG_LATEST
+    - echo "Deploy image tag:"$TAG_COMMIT
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push $TAG_LATEST
+  only:
+    - develop
+  when: on_success
+  
 cleanup_build_job:
   stage: cleanup_build
   script:
