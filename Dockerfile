@@ -55,7 +55,7 @@ WORKDIR /var/www/
 COPY --from=build /app /var/www/
 
 #Per reverse proxy
-RUN ln -s /var/www/public /var/www/public/app
+RUN ln -s /var/www/public /var/www/public/$CI_PROJECT_NAME
 RUN chown -R www-data:www-data /var/www
 
 COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
