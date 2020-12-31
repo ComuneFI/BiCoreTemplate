@@ -1,11 +1,13 @@
 version: '3.2'
 services:
   app:
-    image: gitlab.comune.intranet:5050/pobogdso/bicoretemplate
-    container_name: bicoretemplate
+    image: $CI_REGISTRY_IMAGE
+    container_name: $CI_PROJECT_NAME
     build: 
       context: .
       dockerfile: Dockerfile
+      args:
+        CI_PROJECT_NAME: $CI_PROJECT_NAME
     networks:
       - elknet
     ports:

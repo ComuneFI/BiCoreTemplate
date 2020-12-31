@@ -162,6 +162,7 @@ deploy_test_job:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_LATEST
   script:
+    - CMDPULL="cd /home/po.bogdso/$CI_PROJECT_NAME && docker pull $TAG_LATEST" && ssh $USER_AT_DOCKER $CMDPULL
     - ssh $USER_AT_DOCKER "sed -i \"s/APP_IMAGE_TAG=.*/APP_IMAGE_TAG=latest/\" /home/po.bogdso/$CI_PROJECT_NAME/.env"
     - ssh $USER_AT_DOCKER "cd /home/po.bogdso/$CI_PROJECT_NAME && docker-compose down && docker-compose up -d"
   only:

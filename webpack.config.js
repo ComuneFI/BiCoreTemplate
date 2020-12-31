@@ -4,9 +4,9 @@ Encore
         // directory where compiled assets will be stored
         .setOutputPath('public/build/')
         // public path used by the web server to access the output path
-        .setPublicPath('/build')
+        .setPublicPath('build')
         // only needed for CDN's or sub-directory deploy
-        //.setManifestKeyPrefix('build/')
+        .setManifestKeyPrefix('build/')
 
         .copyFiles([{
                 from: './node_modules/bootstrap-italia/dist/fonts',
@@ -14,6 +14,9 @@ Encore
             }, {
                 from: './node_modules/bootstrap-italia/dist/svg',
                 to: 'svg/[path][name].[ext]'
+            }, {
+                from: './node_modules/@fortawesome/fontawesome-free/webfonts',
+                to: 'build/fonts/[path][name].[hash:8].[ext]'
             }])
         /*
          * ENTRY CONFIG

@@ -41,6 +41,8 @@ ENV http_proxy "http://proxyhttp.comune.intranet:8080"
 ENV https_proxy "http://proxyhttps.comune.intranet:8080"
 ENV no_proxy "localhost,127.0.0.1,.localhost,.comune.intranet" 
 
+ARG CI_PROJECT_NAME
+
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -53,9 +55,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/
 COPY --from=build /app /var/www/
-
+RUN env
 #Per reverse proxy
-RUN ln -s /var/www/public /var/www/public/app
+RUN ln -s ../public public/$CI_PROJECT_NAME
 RUN chown -R www-data:www-data /var/www
 
 COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
