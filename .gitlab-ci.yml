@@ -140,6 +140,15 @@ deploy_test_job:
   image: docker/compose
   before_script:
     - env
+    - mkdir /root/.ssh && chmod 0700 /root/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - 'which ssh-agent || ( apk add openssh-client )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - chmod 700 ~/.ssh
+    - chmod 644 ~/.ssh/known_hosts
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tLogLevel=quiet\n\n" > ~/.ssh/config
     - docker-compose build
     - echo "SPA debug:"
     - echo "Registry:"$CI_REGISTRY
@@ -160,6 +169,15 @@ deploy_prod_job:
   image: docker/compose
   before_script:
     - env
+    - mkdir /root/.ssh && chmod 0700 /root/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - 'which ssh-agent || ( apk add openssh-client )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - chmod 700 ~/.ssh
+    - chmod 644 ~/.ssh/known_hosts
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tLogLevel=quiet\n\n" > ~/.ssh/config
     - echo "SPA debug:"
     - echo "Registry:"$CI_REGISTRY
     - echo "Latest image tag:"$TAG_LATEST
