@@ -2,8 +2,7 @@ image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 
 stages:
     - build
-    - deploy_test
-    - deploy_prod
+    - deploy
     - cleanup_build
     
 variables:
@@ -137,9 +136,9 @@ build_sqlite:
       DATABASE_URL: $SQLITE_DATABASE_URL
       
 deploy_test_job:
-  stage: deploy_test
+  stage: deploy
   image: docker/compose
-  script:
+  before_script:
     - env
     - docker-compose build
     - echo "SPA debug:"
@@ -147,6 +146,9 @@ deploy_test_job:
     - echo "Latest image tag:"$TAG_LATEST
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_LATEST
+  script:
+    - ssh $USER_AT_DOCKER "sed -i \"s/BICORETEMPLATE_TAG=.*/BICORETEMPLATE_TAG=$CI_COMMIT_TAG/\" /home/po.bogdso/bicoretemplate/.env"
+    - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/bicoretemplate && docker-compose down && docker-compose up -d'
   only:
     - develop
   when: on_success
@@ -154,9 +156,9 @@ deploy_test_job:
     name: test
   
 deploy_prod_job:
-  stage: deploy_prod
+  stage: deploy
   image: docker/compose
-  script:
+  before_script:
     - env
     - echo "SPA debug:"
     - echo "Registry:"$CI_REGISTRY
@@ -165,6 +167,7 @@ deploy_prod_job:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY      
     - docker tag $TAG_LATEST $TAG_COMMIT
     - docker push $TAG_COMMIT
+  script:
     - ssh $USER_AT_DOCKER "sed -i \"s/BICORETEMPLATE_TAG=.*/BICORETEMPLATE_TAG=$CI_COMMIT_TAG/\" /home/po.bogdso/bicoretemplate/.env"
     - ssh $USER_AT_DOCKER 'cd /home/po.bogdso/bicoretemplate && docker-compose down && docker-compose up -d'
   when: manual
