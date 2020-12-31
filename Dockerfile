@@ -1,4 +1,5 @@
 ARG DATABASE_URL
+ARG CI_PROJECT_NAME
 
 # Dockerfile
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache as build

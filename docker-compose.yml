@@ -6,6 +6,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+      args:
+        CI_PROJECT_NAME: $CI_PROJECT_NAME
     networks:
       - elknet
     ports:
