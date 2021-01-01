@@ -65,7 +65,7 @@ build_postgres:
       - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
       #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
       #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
-      - composer validate --strict
+      #- composer validate --strict
     variables:
       DATABASE_URL: $POSTGRES_DATABASE_URL
       POSTGRES_DB: bicorebundletest
@@ -104,7 +104,7 @@ build_mysql:
       - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
       #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
       #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
-      - composer validate --strict
+      #- composer validate --strict
     variables:
       DATABASE_URL: $MYSQL_DATABASE_URL
       MYSQL_DATABASE: bicorebundletest
@@ -135,7 +135,7 @@ build_sqlite:
       - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
       #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
       #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
-      - composer validate --strict
+      #- composer validate --strict
     variables:
       DATABASE_URL: $SQLITE_DATABASE_URL
     only:
