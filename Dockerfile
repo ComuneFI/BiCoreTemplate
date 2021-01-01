@@ -30,7 +30,7 @@ RUN rm -rf .git && \
     chmod 777 -R var && \ 
     composer install
 
-FROM php:7-apache
+FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
 ENV DATABASE_URL=sqlite:///%kernel.project_dir%/var/dbapp.sqlite
 
@@ -42,16 +42,6 @@ ENV https_proxy "http://proxyhttps.comune.intranet:8080"
 ENV no_proxy "localhost,127.0.0.1,.localhost,.comune.intranet" 
 
 ARG CI_PROJECT_NAME
-
-RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
-        libzip-dev libpq-dev git \
-        libmcrypt-dev libonig-dev zlib1g-dev \
-        acl \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring gd zip
 
 WORKDIR /var/www/
 COPY --from=build /app /var/www/
