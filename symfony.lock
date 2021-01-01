@@ -71,6 +71,9 @@
     "egulias/email-validator": {
         "version": "2.1.6"
     },
+    "ezyang/htmlpurifier": {
+        "version": "v4.13.0"
+    },
     "fi/bootstrapitaliabundle": {
         "version": "v0.19.1.3"
     },
