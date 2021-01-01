@@ -30,7 +30,7 @@ RUN rm -rf .git && \
     chmod 777 -R var && \ 
     composer install
 
-FROM php:7-apache
+FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
 ENV DATABASE_URL=sqlite:///%kernel.project_dir%/var/dbapp.sqlite
 
@@ -43,24 +43,14 @@ ENV no_proxy "localhost,127.0.0.1,.localhost,.comune.intranet"
 
 ARG CI_PROJECT_NAME
 
-RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
-        libzip-dev libpq-dev git \
-        libmcrypt-dev libonig-dev zlib1g-dev \
-        acl \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring gd zip
-
-WORKDIR /var/www/
-COPY --from=build /app /var/www/
+WORKDIR /var/www/html
+COPY --from=build /app /var/www/html
 RUN env
 #Per reverse proxy
 RUN ln -s ../public public/$CI_PROJECT_NAME
 RUN chown -R www-data:www-data /var/www
 
-COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY --from=build /app/.docker/apache/start-apache /usr/local/bin/
 
 
@@ -70,6 +60,7 @@ RUN sed -ri -e 's/(CipherString\s*=\s*DEFAULT)@SECLEVEL=2/\1/' /etc/ssl/openssl.
 
 RUN chmod +x /usr/local/bin/start-apache
 RUN a2enmod rewrite
+RUN apachectl configtest
 
 EXPOSE 80
 
