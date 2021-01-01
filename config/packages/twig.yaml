@@ -4,6 +4,7 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         database_url: "%env(resolve:DATABASE_URL)%"
+        software_version: '%env(APP_IMAGE_TAG)%'
     form_themes:
         - bootstrap_4_layout.html.twig
     exception_controller: null
