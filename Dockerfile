@@ -3,7 +3,7 @@ ARG DATABASE_URL
 # Dockerfile
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache as build
 
-ENV APP_ENV=dev
+ENV APP_ENV=prod
 # Database needed only for initial profiling users
 ENV DATABASE_URL=sqlite:///%kernel.project_dir%/var/dbapp.sqlite
 
@@ -28,7 +28,7 @@ RUN rm -rf .git && \
     rm -rf .env.local && \
     mkdir var && \ 
     chmod 777 -R var && \ 
-    composer install
+    composer install --no-dev --optimize-autoloader --no-interaction
 
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
