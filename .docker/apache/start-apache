@@ -6,7 +6,7 @@ APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data' | grep -v root
 setfacl -R -m u:"$APACHEUSER":rwX -m u:`whoami`:rwX /var/www/html/var
 setfacl -dR -m u:"$APACHEUSER":rwX -m u:`whoami`:rwX /var/www/html/var
 
-/var/www/bin/console cache:clear --env=prod
+/var/www/html/bin/console cache:clear --env=prod
 chmod 777 -R /var/www/html/var/cache
 chmod 777 -R /var/www/html/var/log
 
