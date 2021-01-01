@@ -43,14 +43,14 @@ ENV no_proxy "localhost,127.0.0.1,.localhost,.comune.intranet"
 
 ARG CI_PROJECT_NAME
 
-WORKDIR /var/www/
-COPY --from=build /app /var/www/
+WORKDIR /var/www/html
+COPY --from=build /app /var/www/html
 RUN env
 #Per reverse proxy
 RUN ln -s ../public public/$CI_PROJECT_NAME
 RUN chown -R www-data:www-data /var/www
 
-COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY --from=build /app/.docker/apache/start-apache /usr/local/bin/
 
 
@@ -60,6 +60,7 @@ RUN sed -ri -e 's/(CipherString\s*=\s*DEFAULT)@SECLEVEL=2/\1/' /etc/ssl/openssl.
 
 RUN chmod +x /usr/local/bin/start-apache
 RUN a2enmod rewrite
+RUN apachectl configtest
 
 EXPOSE 80
 
