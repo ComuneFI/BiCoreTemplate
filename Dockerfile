@@ -54,7 +54,7 @@ RUN chown -R www-data:www-data /var/www
 #Remove apache logs folder to override it
 RUN rm -rf /var/log/apache2
 RUN mkdir /var/log/apache2
-COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY --from=build /app/.docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY --from=build /app/.docker/apache/start-apache /usr/local/bin/
 
 
