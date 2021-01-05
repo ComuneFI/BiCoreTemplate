@@ -66,6 +66,9 @@ RUN chmod +x /usr/local/bin/start-apache
 RUN a2enmod rewrite
 RUN apachectl configtest
 
+RUN echo "Europe/Rome" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
 EXPOSE 80
 
 CMD ["/usr/local/bin/start-apache"]
