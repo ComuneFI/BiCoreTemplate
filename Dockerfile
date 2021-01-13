@@ -30,8 +30,10 @@ RUN rm -rf .git && \
     composer install --no-dev --optimize-autoloader --no-interaction && \
     yarn install --force && \
     yarn build && \
-    yarn outdated \
-    rm -rf node_modules
+    yarn outdated && \
+    rm -rf node_modules && \
+    rm -rf vendor/bin/.phpunit
+    
 
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
