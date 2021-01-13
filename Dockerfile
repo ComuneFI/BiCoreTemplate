@@ -28,7 +28,10 @@ RUN rm -rf .git && \
     rm -rf .env.local && \
     mkdir var && \ 
     chmod 777 -R var && \ 
-    composer install --no-dev --optimize-autoloader --no-interaction
+    composer install --no-dev --optimize-autoloader --no-interaction && \
+    yarn install --force && \
+    yarn build && \
+    yarn outdated
 
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
