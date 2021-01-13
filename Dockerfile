@@ -23,7 +23,6 @@ rm -rf .env.local
 
 RUN rm -rf .git && \
     rm -rf config/jwt && \
-    rm -rf node_modules && \
     rm -rf var && \
     rm -rf .env.local && \
     mkdir var && \ 
@@ -31,7 +30,8 @@ RUN rm -rf .git && \
     composer install --no-dev --optimize-autoloader --no-interaction && \
     yarn install --force && \
     yarn build && \
-    yarn outdated
+    yarn outdated \
+    rm -rf node_modules
 
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
