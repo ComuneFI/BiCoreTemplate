@@ -30,7 +30,7 @@ RUN rm -rf .git && \
     composer install --no-dev --optimize-autoloader --no-interaction && \
     yarn install --force && \
     yarn build && \
-    yarn outdated && \
+    yarn outdated || true && \
     rm -rf node_modules && \
     rm -rf vendor/bin/.phpunit
     
