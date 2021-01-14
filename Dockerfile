@@ -23,12 +23,17 @@ rm -rf .env.local
 
 RUN rm -rf .git && \
     rm -rf config/jwt && \
-    rm -rf node_modules && \
     rm -rf var && \
     rm -rf .env.local && \
     mkdir var && \ 
     chmod 777 -R var && \ 
-    composer install --no-dev --optimize-autoloader --no-interaction
+    composer install --no-dev --optimize-autoloader --no-interaction && \
+    yarn install --force && \
+    yarn build && \
+    yarn outdated && \
+    rm -rf node_modules && \
+    rm -rf vendor/bin/.phpunit
+    
 
 FROM gitlab.comune.intranet:5050/docker/php7.4-apache
 
