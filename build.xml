@@ -7,12 +7,12 @@
                     composer-run-install,
                     bicorebundle-drop-database,
                     bicorebundle-install,
-                    php-security-checker, 
                     phpstan-ci,
                     upgradechromedriver,
                     phpunit-ci,
                     finish">
     </target>
+    <!-- php-security-checker,-->
     
     <target name="clean" description="Cleanup build">
         <delete dir="build/artifacts/coverage"/>
