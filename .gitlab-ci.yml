@@ -1,5 +1,3 @@
-image: $CI_REGISTRY/docker/php7.4-xdebug-apache
-
 stages:
     - build
     - deploy
@@ -35,7 +33,8 @@ cache:
     - .composer_cache
 
 
-build_postgres:
+build_postgres_php74:
+    image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 #    only:
 #      refs:
 #        - develop
@@ -74,7 +73,8 @@ build_postgres:
     only:
       - develop
   
-build_mysql:
+build_mysql_php74:
+    image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 #    only:
 #      refs:
 #        - develop
@@ -112,7 +112,8 @@ build_mysql:
     only:
       - develop
       
-build_sqlite:
+build_sqlite_php74:
+    image: $CI_REGISTRY/docker/php7.4-xdebug-apache
 #    only:
 #      refs:
 #        - develop
@@ -140,7 +141,116 @@ build_sqlite:
       DATABASE_URL: $SQLITE_DATABASE_URL
     only:
       - develop
+
+build_postgres_php80:
+    image: $CI_REGISTRY/docker/php8.0-xdebug-apache
+#    only:
+#      refs:
+#        - develop
+    before_script:
+        - php -m
+        - apt-get update && apt-get install -y xvfb fontconfig pcregrep
+        - Xvfb :0 -ac -screen 0 1024x768x24 &
+        - echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+        - composer config cache-files-dir .composer_cache
+    stage: build
+    retry: 2
+    services:
+      - postgres:12.2-alpine
+    script:
+      - ant
+      - ./bin/console lint:yaml config --parse-tags
+      # this checks that the Twig template files contain no syntax errors
+      - ./bin/console lint:twig templates --env=prod
+      # this checks that the XLIFF translations contain no syntax errors
+      - ./bin/console lint:xliff translations
+      # this checks that arguments injected into services match type declarations
+      - ./bin/console lint:container
+      # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
+      # this checks that the application doesn't use dependencies with known security vulnerabilities
+      #- ./bin/console security:check
+      # this checks that Doctrine's mapping configurations are valid
+      - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
+      #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
+      #- composer validate --strict
+    variables:
+      DATABASE_URL: $POSTGRES_DATABASE_URL
+      POSTGRES_DB: bicorebundletest
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: "adminpass"
+    only:
+      - develop
+  
+build_mysql_php80:
+    image: $CI_REGISTRY/docker/php8.0-xdebug-apache
+#    only:
+#      refs:
+#        - develop
+    before_script:
+        - php -m
+        - apt-get update && apt-get install -y xvfb fontconfig pcregrep
+        - Xvfb :0 -ac -screen 0 1024x768x24 &
+        - echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+        - composer config cache-files-dir .composer_cache
+    stage: build
+    retry: 2
+    services:
+      - mysql:8.0.22
+    script:
+      - ant
+      - ./bin/console lint:yaml config --parse-tags
+      # this checks that the Twig template files contain no syntax errors
+      - ./bin/console lint:twig templates --env=prod
+      # this checks that the XLIFF translations contain no syntax errors
+      - ./bin/console lint:xliff translations
+      # this checks that arguments injected into services match type declarations
+      - ./bin/console lint:container
+      # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
+      # this checks that the application doesn't use dependencies with known security vulnerabilities
+      #- ./bin/console security:check
+      # this checks that Doctrine's mapping configurations are valid
+      - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
+      #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
+      #- composer validate --strict
+    variables:
+      DATABASE_URL: $MYSQL_DATABASE_URL
+      MYSQL_DATABASE: bicorebundletest
+      MYSQL_ROOT_PASSWORD: "adminpass"
+    only:
+      - develop
       
+build_sqlite_php80:
+    image: $CI_REGISTRY/docker/php8.0-xdebug-apache
+#    only:
+#      refs:
+#        - develop
+    stage: build
+    retry: 2
+    allow_failure: true
+    script:
+      - ant
+      - ./bin/console lint:yaml config --parse-tags
+      # this checks that the Twig template files contain no syntax errors
+      - ./bin/console lint:twig templates --env=prod
+      # this checks that the XLIFF translations contain no syntax errors
+      - ./bin/console lint:xliff translations
+      # this checks that arguments injected into services match type declarations
+      - ./bin/console lint:container
+      # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
+      # this checks that the application doesn't use dependencies with known security vulnerabilities
+      #- ./bin/console security:check
+      # this checks that Doctrine's mapping configurations are valid
+      - ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction
+      #  Fail CI if the repo is in a dirty state after building assets (only for current release ie install)
+      #-  if [[ "$ACTION" == "install" ]]; then yarn install && yarn encore production && git add --all && git diff --staged --exit-code; fi
+      #- composer validate --strict
+    variables:
+      DATABASE_URL: $SQLITE_DATABASE_URL
+    only:
+      - develop
+
 deploy_test_job:
   stage: deploy
   image: docker/compose
