@@ -8,11 +8,11 @@
                     bicorebundle-drop-database,
                     bicorebundle-install,
                     phpstan-ci,
-                    upgradechromedriver,
+                    install-chromedriver,
                     phpunit-ci,
                     finish">
     </target>
-    <!-- php-security-checker,-->
+    <!-- upgradechromedriver, php-security-checker,-->
     
     <target name="clean" description="Cleanup build">
         <delete dir="build/artifacts/coverage"/>
@@ -74,6 +74,13 @@
 
     <target name="upgradechromedriver" description="Upgrade chromedriver for panther issue #356">
         <exec executable="build/upgradePantherChromedriver.sh" failonerror="false">
+        </exec>
+    </target>
+
+    <target name="install-chromedriver" description="Install chromedriver for panther">
+        <exec executable="bin/bdi" failonerror="false">
+            <arg value="detect"/>
+            <arg value="drivers"/>
         </exec>
     </target>
 
