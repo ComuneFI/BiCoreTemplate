@@ -13,8 +13,8 @@ services:
     ports:
       - "${HOST_PORT}:${HTTP_PORT}"
     volumes:
-        - ./var/log:/var/www/var/log
-        - ./var/cache:/var/www/var/cache
+        - ./var/log:/var/www/html/var/log
+        - ./var/cache:/var/www/html/var/cache
     env_file:
       - ./.env
 networks:
