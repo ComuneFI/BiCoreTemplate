@@ -3,6 +3,7 @@ services:
   app:
     image: $CI_REGISTRY_IMAGE
     container_name: $CI_PROJECT_NAME
+    restart: always
     build: 
       context: .
       dockerfile: Dockerfile
