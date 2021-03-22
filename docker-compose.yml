@@ -3,6 +3,7 @@ services:
   app:
     image: $CI_REGISTRY_IMAGE
     container_name: $CI_PROJECT_NAME
+    restart: always
     build: 
       context: .
       dockerfile: Dockerfile
@@ -15,6 +16,8 @@ services:
     volumes:
         - ./var/log:/var/www/html/var/log
         - ./var/cache:/var/www/html/var/cache
+        - ./var/apachelogs:/var/log/apache2
+        
     env_file:
       - ./.env
 networks:
