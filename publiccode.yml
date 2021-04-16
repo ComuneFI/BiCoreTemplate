@@ -1,0 +1,86 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+applicationSuite: BiCore
+categories:
+  - application-development
+  - it-development
+  - website-builder
+description:
+  it:
+    documentation: 'https://github.com/ComuneFI/BiCoreTemplate/blob/master/README.md'
+    features:
+      - Compatibile con Bootstrap italia
+      - Gestione utenti integrata ed estendibile
+      - Gestione granulare dei permessi sulle pagine per gli utenti
+    genericName: Web Application template
+    longDescription: |
+      L'applicazione fornisce un template pronto all'uso per lo sviluppo di una
+      web application basata sul framework symfony 4.4.
+
+
+      Gestione utenti integrata con possibilità di gestire i permessi a livello
+      di singola pagina web.
+
+
+      Gestione del menu personalizzabile.
+
+
+      Compatibile con postgresql, mysql e sqllite. 
+
+
+      Il template una volta installato fornisce una web application vuota
+      funzionante da riempire a seconda delle proprie esigenze, già pronta per
+      l'utilizzo dei componenti grafici di Bootstrap Italia.
+
+
+      ​
+    shortDescription: |-
+      Template per web application costruito in modo da essere un acceleratore
+      di produttività riusabile e ridistribuibile
+developmentStatus: stable
+intendedAudience:
+  countries:
+    - it
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: true
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: c_d612
+legal:
+  license: AGPL-3.0-or-later
+localisation:
+  availableLanguages:
+    - it
+  localisationReady: false
+maintenance:
+  contacts:
+    - affiliation: Comune di Firenze
+      email: giovanni1.rossi@comune.fi.it
+      name: Giovanni Rossi
+    - affiliation: Comune di Firenze
+      email: andrea.manzi@comune.fi.it
+      name: Andrea Manzi
+    - affiliation: Comune di Firenze
+      email: riccardo.vannetti@comune.fi.it
+      name: Riccardo Vannetti
+  type: internal
+name: BiCoreTemplate
+platforms:
+  - linux
+releaseDate: '2021-04-09'
+softwareType: standalone/web
+softwareVersion: 2.2.6
+url: 'https://github.com/ComuneFI/BiCoreTemplate'
+
