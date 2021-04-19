@@ -81,16 +81,16 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "510154cf837d3fb0eb90694e8c8dbf5fdb451d62"
+                "reference": "ec671e23cf9c80934dc56dea62dc188fb5fba555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/510154cf837d3fb0eb90694e8c8dbf5fdb451d62",
-                "reference": "510154cf837d3fb0eb90694e8c8dbf5fdb451d62",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/ec671e23cf9c80934dc56dea62dc188fb5fba555",
+                "reference": "ec671e23cf9c80934dc56dea62dc188fb5fba555",
                 "shasum": ""
             },
             "require": {
@@ -203,9 +203,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ComuneFI/BiCoreBundle/issues",
-                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.4"
+                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.5"
             },
-            "time": "2021-04-19T10:39:21+00:00"
+            "time": "2021-04-19T10:53:04+00:00"
         },
         {
             "name": "comunedifirenze/user-bundle",
