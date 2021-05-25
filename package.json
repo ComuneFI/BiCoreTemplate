@@ -20,6 +20,6 @@
         "bootstrap-italia": "^1.2.6",
         "jquery-contextmenu": "^2.8.0",
         "moment": "^2.24.0",
-        "sweetalert2": "^10.13.0"
+        "sweetalert2": "^11.0.0"
     }
 }
