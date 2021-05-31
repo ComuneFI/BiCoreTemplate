@@ -44,8 +44,8 @@
         "build/runtime.6baea538.js",
         "build/755.f5cf308f.js",
         "build/981.51afc3c7.js",
-        "build/994.42cece2e.js",
-        "build/93.bd1bf22b.js",
+        "build/994.d0a01763.js",
+        "build/93.5eb862f3.js",
         "build/919.fc75f998.js",
         "build/bitabella.b01b755f.js"
       ],
@@ -59,8 +59,8 @@
         "build/runtime.6baea538.js",
         "build/755.f5cf308f.js",
         "build/981.51afc3c7.js",
-        "build/994.42cece2e.js",
-        "build/93.bd1bf22b.js",
+        "build/994.d0a01763.js",
+        "build/93.5eb862f3.js",
         "build/919.fc75f998.js",
         "build/bidemo.a6505929.js"
       ],
@@ -73,11 +73,11 @@
       "js": [
         "build/runtime.6baea538.js",
         "build/755.f5cf308f.js",
-        "build/994.42cece2e.js",
+        "build/994.d0a01763.js",
         "build/adminpanel.14d6bce6.js"
       ],
       "css": [
-        "build/adminpanel.159bde85.css"
+        "build/adminpanel.feba0325.css"
       ]
     }
   }

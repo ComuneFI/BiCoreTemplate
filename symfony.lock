@@ -2,9 +2,6 @@
     "comunedifirenze/bicorebundle": {
         "version": "v0.1.0"
     },
-    "comunedifirenze/user-bundle": {
-        "version": "1.2.2.5"
-    },
     "dbrekelmans/bdi": {
         "version": "0.3"
     },
@@ -109,6 +106,9 @@
     },
     "hanneskod/classtools": {
         "version": "1.2.1"
+    },
+    "kimai/user-bundle": {
+        "version": "2.0"
     },
     "laminas/laminas-code": {
         "version": "4.0.0"
