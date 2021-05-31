@@ -81,23 +81,23 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.2.15",
+            "version": "2.2.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "9471aca211e4c64515ad5a76bba87f4478f81986"
+                "reference": "1814667b8aeabbe2e9dbdec4c1e5d47fe36f38e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/9471aca211e4c64515ad5a76bba87f4478f81986",
-                "reference": "9471aca211e4c64515ad5a76bba87f4478f81986",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/1814667b8aeabbe2e9dbdec4c1e5d47fe36f38e5",
+                "reference": "1814667b8aeabbe2e9dbdec4c1e5d47fe36f38e5",
                 "shasum": ""
             },
             "require": {
                 "fi/osbundle": "~2.0",
                 "friendsofsymfony/jsrouting-bundle": "^2.2",
                 "hanneskod/classtools": "^1.2",
-                "kimai/user-bundle": "^2.0",
+                "kimai/user-bundle": "^1.0|^2.0",
                 "mysql-workbench-schema-exporter/doctrine2-exporter": "3.0.*",
                 "mysql-workbench-schema-exporter/mysql-workbench-schema-exporter": "^3.0",
                 "php": ">=7.2",
@@ -203,9 +203,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ComuneFI/BiCoreBundle/issues",
-                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.15"
+                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.16"
             },
-            "time": "2021-05-31T09:40:09+00:00"
+            "time": "2021-05-31T13:12:07+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -9277,26 +9277,26 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v5.2.9",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "ea24e42c1ee04792f5d814da6f0814b20ece2907"
+                "reference": "15cab721487b7bf43ad545a1e7d0095782e26f8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/ea24e42c1ee04792f5d814da6f0814b20ece2907",
-                "reference": "ea24e42c1ee04792f5d814da6f0814b20ece2907",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/15cab721487b7bf43ad545a1e7d0095782e26f8c",
+                "reference": "15cab721487b7bf43ad545a1e7d0095782e26f8c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=7.1.3",
+                "symfony/deprecation-contracts": "^2.1"
             },
             "conflict": {
-                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0|<6.4,>=6.0|9.1.2"
+                "phpunit/phpunit": "<7.5|9.1.2"
             },
             "require-dev": {
-                "symfony/deprecation-contracts": "^2.1",
                 "symfony/error-handler": "^4.4|^5.0"
             },
             "suggest": {
@@ -9340,7 +9340,7 @@
             "description": "Provides utilities for PHPUnit, especially user deprecation notices management",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/phpunit-bridge/tree/v5.2.9"
+                "source": "https://github.com/symfony/phpunit-bridge/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -9356,7 +9356,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-16T13:07:46+00:00"
+            "time": "2021-05-26T17:57:12+00:00"
         },
         {
             "name": "symfony/profiler-pack",
