@@ -81,23 +81,23 @@
         },
         {
             "name": "comunedifirenze/bicorebundle",
-            "version": "2.2.14",
+            "version": "2.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ComuneFI/BiCoreBundle.git",
-                "reference": "e5ddfa3188862034d1dee40f0d6bc7015e4929fb"
+                "reference": "9471aca211e4c64515ad5a76bba87f4478f81986"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/e5ddfa3188862034d1dee40f0d6bc7015e4929fb",
-                "reference": "e5ddfa3188862034d1dee40f0d6bc7015e4929fb",
+                "url": "https://api.github.com/repos/ComuneFI/BiCoreBundle/zipball/9471aca211e4c64515ad5a76bba87f4478f81986",
+                "reference": "9471aca211e4c64515ad5a76bba87f4478f81986",
                 "shasum": ""
             },
             "require": {
-                "comunedifirenze/user-bundle": "^1.2",
                 "fi/osbundle": "~2.0",
                 "friendsofsymfony/jsrouting-bundle": "^2.2",
                 "hanneskod/classtools": "^1.2",
+                "kimai/user-bundle": "^2.0",
                 "mysql-workbench-schema-exporter/doctrine2-exporter": "3.0.*",
                 "mysql-workbench-schema-exporter/mysql-workbench-schema-exporter": "^3.0",
                 "php": ">=7.2",
@@ -203,82 +203,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ComuneFI/BiCoreBundle/issues",
-                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.14"
+                "source": "https://github.com/ComuneFI/BiCoreBundle/tree/2.2.15"
             },
-            "time": "2021-05-26T13:34:24+00:00"
-        },
-        {
-            "name": "comunedifirenze/user-bundle",
-            "version": "1.2.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ComuneFI/user-bundle.git",
-                "reference": "23668026d6faf8250819279e20a0ca8d9130e53d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ComuneFI/user-bundle/zipball/23668026d6faf8250819279e20a0ca8d9130e53d",
-                "reference": "23668026d6faf8250819279e20a0ca8d9130e53d",
-                "shasum": ""
-            },
-            "require": {
-                "paragonie/random_compat": "^1 || ^2 || ^9",
-                "php": "^7.2 || ^8.0",
-                "symfony/form": "^4.4|^5.0",
-                "symfony/framework-bundle": "^4.4|^5.0",
-                "symfony/security-bundle": "^4.4|^5.0",
-                "symfony/translation": "^4.4|^5.0",
-                "symfony/twig-bundle": "^4.4|^5.0",
-                "symfony/validator": "^4.4|^5.0"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "^2.0",
-                "phpunit/phpunit": "^4.8.35 || ^5.7.11 || ^6.5",
-                "swiftmailer/swiftmailer": "^4.3 || ^5.0 || ^6.0",
-                "symfony/console": "^4.0|^5.0",
-                "symfony/phpunit-bridge": "^4.0|^5.0",
-                "symfony/yaml": "^4.0|^5.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "FOS\\UserBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christophe Coevoet",
-                    "email": "stof@notk.org"
-                },
-                {
-                    "name": "Thibault Duplessis"
-                },
-                {
-                    "name": "FriendsOfSymfony Community",
-                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
-                },
-                {
-                    "name": "Kevin Papst",
-                    "homepage": "https://www.kevinpapst.de"
-                },
-                {
-                    "name": "Andrea Manzi",
-                    "homepage": "https://github.com/manzolo"
-                }
-            ],
-            "description": "Comune di Firenze Symfony UserBundle",
-            "homepage": "https://github.com/ComuneFI",
-            "support": {
-                "source": "https://github.com/ComuneFI/user-bundle/tree/1.2.2.5"
-            },
-            "time": "2021-03-03T09:40:32+00:00"
+            "time": "2021-05-31T09:40:09+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2011,6 +1938,74 @@
             "time": "2020-03-05T20:41:28+00:00"
         },
         {
+            "name": "kimai/user-bundle",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kimai/user-bundle.git",
+                "reference": "9ef2c93a4ed9d14f0e354d88bd5fc7ab68c86c16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kimai/user-bundle/zipball/9ef2c93a4ed9d14f0e354d88bd5fc7ab68c86c16",
+                "reference": "9ef2c93a4ed9d14f0e354d88bd5fc7ab68c86c16",
+                "shasum": ""
+            },
+            "require": {
+                "paragonie/random_compat": "^1 || ^2 || ^9",
+                "php": ">=7.3",
+                "symfony/form": "^4.4",
+                "symfony/framework-bundle": "^4.4",
+                "symfony/security-bundle": "^4.4",
+                "symfony/translation": "^4.4",
+                "symfony/twig-bundle": "^4.4",
+                "symfony/validator": "^4.4"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^2.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7.11 || ^6.5 || ^8.0 || ^9.0",
+                "swiftmailer/swiftmailer": "^4.3 || ^5.0 || ^6.0",
+                "symfony/console": "^4.0",
+                "symfony/yaml": "^4.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "FOS\\UserBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "Thibault Duplessis"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
+                },
+                {
+                    "name": "Kevin Papst",
+                    "homepage": "https://www.kevinpapst.de"
+                }
+            ],
+            "description": "Kimai UserBundle",
+            "homepage": "https://www.kimai.org",
+            "support": {
+                "source": "https://github.com/kimai/user-bundle/tree/2.0"
+            },
+            "time": "2021-05-30T10:30:27+00:00"
+        },
+        {
             "name": "laminas/laminas-code",
             "version": "4.3.0",
             "source": {
@@ -2451,16 +2446,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.26.0",
+            "version": "1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33"
+                "reference": "c6b00f05152ae2c9b04a448f99c7590beb6042f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
-                "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c6b00f05152ae2c9b04a448f99c7590beb6042f5",
+                "reference": "c6b00f05152ae2c9b04a448f99c7590beb6042f5",
                 "shasum": ""
             },
             "require": {
@@ -2521,7 +2516,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/1.26.0"
+                "source": "https://github.com/Seldaek/monolog/tree/1.26.1"
             },
             "funding": [
                 {
@@ -2533,7 +2528,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-14T12:56:38+00:00"
+            "time": "2021-05-28T08:32:12+00:00"
         },
         {
             "name": "myclabs/php-enum",
@@ -5201,6 +5196,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": "use `EnglishInflector` from the String component instead",
             "time": "2021-05-10T14:36:02+00:00"
         },
         {
