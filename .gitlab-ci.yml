@@ -128,7 +128,7 @@ build_sqlite_php74:
       # this checks that the XLIFF translations contain no syntax errors
       - ./bin/console lint:xliff translations
       # this checks that arguments injected into services match type declarations
-      - ./bin/console lint:container
+      #- ./bin/console lint:container
       # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
       # this checks that the application doesn't use dependencies with known security vulnerabilities
       #- ./bin/console security:check
@@ -165,7 +165,7 @@ build_postgres_php80:
       # this checks that the XLIFF translations contain no syntax errors
       - ./bin/console lint:xliff translations
       # this checks that arguments injected into services match type declarations
-      - ./bin/console lint:container
+      #- ./bin/console lint:container
       # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
       # this checks that the application doesn't use dependencies with known security vulnerabilities
       #- ./bin/console security:check
@@ -205,7 +205,7 @@ build_mysql_php80:
       # this checks that the XLIFF translations contain no syntax errors
       - ./bin/console lint:xliff translations
       # this checks that arguments injected into services match type declarations
-      - ./bin/console lint:container
+      #- ./bin/console lint:container
       # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
       # this checks that the application doesn't use dependencies with known security vulnerabilities
       #- ./bin/console security:check
@@ -237,7 +237,7 @@ build_sqlite_php80:
       # this checks that the XLIFF translations contain no syntax errors
       - ./bin/console lint:xliff translations
       # this checks that arguments injected into services match type declarations
-      - ./bin/console lint:container
+      #- ./bin/console lint:container
       # TODO: replace the old security checker by the new checker provided by the 'symfony' binary
       # this checks that the application doesn't use dependencies with known security vulnerabilities
       #- ./bin/console security:check
