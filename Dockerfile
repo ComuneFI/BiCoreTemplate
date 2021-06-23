@@ -28,8 +28,8 @@ RUN rm -rf .git && \
     mkdir var && \ 
     chmod 777 -R var && \ 
     composer install --no-dev --optimize-autoloader --no-interaction && \
-    yarn install --force && \
-    yarn build && \
+    #yarn install --force && \
+    #yarn build && \
     yarn outdated || true && \
     rm -rf node_modules && \
     rm -rf vendor/bin/.phpunit
